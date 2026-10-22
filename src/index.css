@@ -1,0 +1,275 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Fraunces", Georgia, "Times New Roman", serif;
+  --font-sans: "Karla", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, "Courier New", monospace;
+
+  /* Verde sabana */
+  --color-verde-50: #eff6ea;
+  --color-verde-100: #dcefd2;
+  --color-verde-200: #bbdfa6;
+  --color-verde-300: #93c97b;
+  --color-verde-400: #6baf52;
+  --color-verde-500: #4a9338;
+  --color-verde-600: #2f7826;
+  --color-verde-700: #1f6120;
+  --color-verde-800: #17491c;
+  --color-verde-900: #123b17;
+  --color-verde-950: #0b2811;
+
+  /* Crema leche */
+  --color-crema-50: #fdfaf3;
+  --color-crema-100: #faf4e6;
+  --color-crema-200: #f3e9d3;
+  --color-crema-300: #e9dab8;
+  --color-crema-400: #dcc08e;
+
+  /* Oro cosecha */
+  --color-oro-200: #f2dcab;
+  --color-oro-300: #e9c46a;
+  --color-oro-400: #dcb052;
+  --color-oro-500: #c99a38;
+  --color-oro-600: #a16207;
+  --color-oro-700: #854e0b;
+
+  /* Tierra */
+  --color-tierra-500: #a8683a;
+  --color-tierra-600: #8a4f2c;
+
+  /* Tinta */
+  --color-tinta: #182a1d;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--color-crema-50);
+  color: var(--color-tinta);
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background-color: var(--color-oro-300);
+  color: var(--color-verde-950);
+}
+
+h1, h2, h3 {
+  font-family: var(--font-display);
+  font-optical-sizing: auto;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-oro-500);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* ————— Componentes base ————— */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.55rem;
+  border-radius: 9999px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  line-height: 1;
+  padding: 0.95rem 1.6rem;
+  border: 1.5px solid transparent;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease;
+}
+
+.btn:active {
+  transform: scale(0.97);
+}
+
+.btn-primary {
+  background-color: var(--color-verde-700);
+  color: var(--color-crema-50);
+}
+
+.btn-primary:hover {
+  background-color: var(--color-verde-800);
+  box-shadow: 0 10px 24px -12px rgba(18, 59, 23, 0.55);
+}
+
+.btn-wa {
+  background-color: var(--color-verde-600);
+  color: var(--color-crema-50);
+}
+
+.btn-wa:hover {
+  background-color: var(--color-verde-700);
+  box-shadow: 0 10px 24px -12px rgba(47, 120, 38, 0.6);
+}
+
+.btn-outline {
+  border-color: var(--color-verde-700);
+  color: var(--color-verde-800);
+  background-color: transparent;
+}
+
+.btn-outline:hover {
+  background-color: var(--color-verde-50);
+}
+
+.btn-outline-crema {
+  border-color: var(--color-crema-300);
+  color: var(--color-crema-100);
+  background-color: transparent;
+}
+
+.btn-outline-crema:hover {
+  border-color: var(--color-crema-100);
+  background-color: rgba(253, 250, 243, 0.08);
+}
+
+.btn-sm {
+  padding: 0.65rem 1.15rem;
+  font-size: 0.85rem;
+}
+
+.eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.eyebrow::before {
+  content: "";
+  display: inline-block;
+  width: 1.6rem;
+  height: 2px;
+  background-color: currentColor;
+}
+
+.card {
+  background-color: #ffffff;
+  border: 1px solid var(--color-crema-300);
+  border-radius: 1.5rem;
+  box-shadow: 0 1px 2px rgba(24, 42, 29, 0.04);
+  transition: box-shadow 0.25s ease, transform 0.25s ease;
+}
+
+.card-hover:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 18px 40px -18px rgba(24, 42, 29, 0.22);
+}
+
+.ficha {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  line-height: 1.7;
+}
+
+.link-underline {
+  text-decoration: underline;
+  text-decoration-color: var(--color-oro-400);
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1.5px;
+  transition: text-decoration-color 0.2s ease;
+}
+
+.link-underline:hover {
+  text-decoration-color: var(--color-oro-600);
+}
+
+/* ————— FAQ (details/summary) ————— */
+
+details.faq-item {
+  border: 1px solid var(--color-crema-300);
+  border-radius: 1rem;
+  background-color: #ffffff;
+  overflow: hidden;
+}
+
+details.faq-item summary {
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1.05rem 1.25rem;
+  font-weight: 600;
+  font-size: 1.02rem;
+}
+
+details.faq-item summary::-webkit-details-marker {
+  display: none;
+}
+
+details.faq-item summary .faq-icon {
+  flex: none;
+  transition: transform 0.25s ease;
+  color: var(--color-oro-600);
+}
+
+details.faq-item[open] summary .faq-icon {
+  transform: rotate(45deg);
+}
+
+details.faq-item .faq-body {
+  padding: 0 1.25rem 1.15rem;
+  color: var(--color-verde-900);
+  opacity: 0.92;
+  max-width: 62ch;
+}
+
+/* ————— Animación de aparición ————— */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.65s ease, transform 0.65s ease;
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+.reveal-delay-1 { transition-delay: 0.08s; }
+.reveal-delay-2 { transition-delay: 0.16s; }
+.reveal-delay-3 { transition-delay: 0.24s; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .reveal { opacity: 1; transform: none; transition: none; }
+  .btn:active { transform: none; }
+  * { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; }
+}
+
+/* ————— Detalles ————— */
+
+.texture-dots {
+  background-image: radial-gradient(rgba(18, 59, 23, 0.07) 1px, transparent 1px);
+  background-size: 22px 22px;
+}
+
+.texture-dots-crema {
+  background-image: radial-gradient(rgba(253, 250, 243, 0.08) 1px, transparent 1px);
+  background-size: 26px 26px;
+}
+
+input[type="number"] {
+  appearance: textfield;
+  -moz-appearance: textfield;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
