@@ -1,6 +1,8 @@
 import { useEffect, useRef, useState, type ReactNode } from "react";
 import { site } from "./data/site";
 
+/* ————— Reveal legado (wrapper) ————— */
+
 export function Reveal({
   children,
   className = "",
@@ -31,13 +33,71 @@ export function Reveal({
     return () => obs.disconnect();
   }, []);
 
+  const delayMs = delay ? delay * 90 : 0;
   const delayClass = delay ? ` reveal-delay-${delay}` : "";
   return (
-    <div ref={ref} className={`reveal${visible ? " is-visible" : ""}${delayClass} ${className}`}>
+    <div
+      ref={ref}
+      className={`reveal-legacy${visible ? " is-visible" : ""}${delayClass} ${className}`}
+      style={delay ? ({ transitionDelay: `${delayMs}ms` } as React.CSSProperties) : undefined}
+    >
       {children}
     </div>
   );
 }
+
+/* ————— Contador animado ————— */
+
+export function CountUp({
+  end,
+  prefixo = "",
+  sufix = "",
+  duration = 1600,
+}: {
+  end: number;
+  prefixo?: string;
+  sufix?: string;
+  duration?: number;
+}) {
+  const ref = useRef<HTMLSpanElement>(null);
+  const [val, setVal] = useState(0);
+
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      setVal(end);
+      return;
+    }
+    const io = new IntersectionObserver(
+      ([e]) => {
+        if (!e.isIntersecting) return;
+        io.disconnect();
+        const t0 = performance.now();
+        const tick = (t: number) => {
+          const p = Math.min((t - t0) / duration, 1);
+          const eased = 1 - Math.pow(1 - p, 3);
+          setVal(Math.round(eased * end));
+          if (p < 1) requestAnimationFrame(tick);
+        };
+        requestAnimationFrame(tick);
+      },
+      { threshold: 0.5 }
+    );
+    io.observe(el);
+    return () => io.disconnect();
+  }, [end, duration]);
+
+  return (
+    <span ref={ref}>
+      {prefixo}
+      {val.toLocaleString("es-CO")}
+      {sufix}
+    </span>
+  );
+}
+
+/* ————— Encabezado de sección ————— */
 
 export function SectionHeading({
   eyebrow,
@@ -48,8 +108,8 @@ export function SectionHeading({
   como = "h2",
 }: {
   eyebrow: string;
-  titulo: string;
-  bajada?: string;
+  titulo: ReactNode;
+  bajada?: ReactNode;
   claro?: boolean;
   centrado?: boolean;
   como?: "h1" | "h2";
@@ -57,17 +117,15 @@ export function SectionHeading({
   const Encabezado = como;
   return (
     <div className={centrado ? "mx-auto max-w-2xl text-center" : "max-w-2xl"}>
-      <span className={`eyebrow ${claro ? "text-oro-300" : "text-oro-600"}`}>{eyebrow}</span>
+      <span className={`eyebrow ${claro ? "eyebrow-light" : ""}`}>{eyebrow}</span>
       <Encabezado
-        className={`mt-4 leading-tight font-semibold tracking-tight ${
-          como === "h1" ? "text-4xl sm:text-5xl" : "text-3xl sm:text-4xl lg:text-[2.75rem]"
-        } ${claro ? "text-crema-50" : "text-verde-950"} ${centrado ? "font-display" : ""}`}
+        className={`mt-5 text-h2 font-semibold ${claro ? "text-crema-50" : "text-verde-950"}`}
       >
         {titulo}
       </Encabezado>
       {bajada && (
         <p
-          className={`mt-4 text-base leading-relaxed sm:text-lg ${
+          className={`mt-5 text-lead ${
             claro ? "text-crema-200/85" : "text-verde-900/75"
           } ${centrado ? "mx-auto" : ""}`}
         >
@@ -77,6 +135,50 @@ export function SectionHeading({
     </div>
   );
 }
+
+/* ————— Marquee ————— */
+
+export function Marquee({ items }: { items: string[] }) {
+  const contenido = [...items, ...items];
+  return (
+    <div
+      className="marquee-pausable marquee-mask overflow-hidden bg-verde-950 py-4"
+      aria-hidden="true"
+    >
+      <div className="marquee-track items-center gap-10">
+        {contenido.map((texto, i) => (
+          <span key={i} className="flex items-center gap-10">
+            <span className="font-mono text-xs font-semibold tracking-[0.25em] whitespace-nowrap text-crema-200/60 uppercase">
+              {texto}
+            </span>
+            <span className="text-oro-400">✦</span>
+          </span>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+/* ————— Divisor de onda ————— */
+
+export function WaveDivider({ color = "var(--color-crema-50)", flip = false }: { color?: string; flip?: boolean }) {
+  return (
+    <svg
+      viewBox="0 0 1440 120"
+      preserveAspectRatio="none"
+      aria-hidden="true"
+      className={`block w-full ${flip ? "rotate-180" : ""}`}
+      style={{ height: "clamp(40px, 7vw, 110px)" }}
+    >
+      <path
+        fill={color}
+        d="M0,64L80,58.7C160,53,320,43,480,80C640,117,800,80,960,74C1120,69,1280,96,1360,48L1440,0L1440,120L1360,120C1280,120,1120,120,960,120C800,120,640,120,480,120C320,120,160,120,80,120L0,120Z"
+      />
+    </svg>
+  );
+}
+
+/* ————— Cadena de valor ————— */
 
 export function CadenaValor({ oscuro = false }: { oscuro?: boolean }) {
   return (
@@ -102,6 +204,8 @@ export function CadenaValor({ oscuro = false }: { oscuro?: boolean }) {
     </ol>
   );
 }
+
+/* ————— Cuña de queso (SVG) ————— */
 
 export function QuesoWedge({ className = "h-16 w-16" }: { className?: string }) {
   return (

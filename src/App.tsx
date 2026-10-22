@@ -8,6 +8,7 @@ import { Proceso } from "./pages/Proceso";
 import { Tiendas } from "./pages/Tiendas";
 import { Recetas } from "./pages/Recetas";
 import { Contacto } from "./pages/Contacto";
+import { Admin } from "./pages/Admin";
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -17,22 +18,31 @@ function ScrollToTop() {
   return null;
 }
 
+function RutasPublicas() {
+  return (
+    <Layout>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/nosotros" element={<Nosotros />} />
+        <Route path="/productos" element={<Productos />} />
+        <Route path="/proceso" element={<Proceso />} />
+        <Route path="/tiendas" element={<Tiendas />} />
+        <Route path="/recetas" element={<Recetas />} />
+        <Route path="/contacto" element={<Contacto />} />
+        <Route path="*" element={<Navigate to="/" replace />} />
+      </Routes>
+    </Layout>
+  );
+}
+
 export default function App() {
   return (
     <BrowserRouter>
       <ScrollToTop />
-      <Layout>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/nosotros" element={<Nosotros />} />
-          <Route path="/productos" element={<Productos />} />
-          <Route path="/proceso" element={<Proceso />} />
-          <Route path="/tiendas" element={<Tiendas />} />
-          <Route path="/recetas" element={<Recetas />} />
-          <Route path="/contacto" element={<Contacto />} />
-          <Route path="*" element={<Navigate to="/" replace />} />
-        </Routes>
-      </Layout>
+      <Routes>
+        <Route path="/admin" element={<Admin />} />
+        <Route path="/*" element={<RutasPublicas />} />
+      </Routes>
     </BrowserRouter>
   );
 }

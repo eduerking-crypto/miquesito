@@ -1,11 +1,11 @@
 @echo off
 setlocal
 cd /d "%~dp0"
-echo === Miquesito - construir y desplegar a Cloudflare Pages ===
+echo === Miquesito - construir y desplegar (Cloudflare Worker + D1) ===
 call npm run build || goto :error
-call npx wrangler pages deploy dist --project-name=miquesito --branch main || goto :error
+call npx wrangler deploy || goto :error
 echo.
-echo Listo: https://miquesito.pages.dev
+echo Listo: https://miquesito.eduerking.workers.dev
 pause
 exit /b 0
 

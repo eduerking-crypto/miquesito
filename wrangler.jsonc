@@ -1,0 +1,21 @@
+{
+  "$schema": "https://unpkg.com/wrangler/config-schema.json",
+  "name": "miquesito",
+  "main": "worker/index.ts",
+  "compatibility_date": "2026-10-22",
+  "assets": {
+    "directory": "./dist",
+    "binding": "ASSETS",
+    "not_found_handling": "single-page-application"
+  },
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "miquesito",
+      "database_id": "437637c4-562f-4a91-a44d-72d46a579961"
+    }
+  ],
+  "observability": {
+    "enabled": true
+  }
+}

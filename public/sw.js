@@ -1,4 +1,4 @@
-const CACHE = "miquesito-v1";
+const CACHE = "miquesito-v2";
 const PRECACHE = [
   "/",
   "/favicon.svg",
@@ -26,6 +26,20 @@ self.addEventListener("fetch", (event) => {
   if (request.method !== "GET") return;
   const url = new URL(request.url);
   if (url.origin !== self.location.origin) return;
+
+  /* La API nunca se cachea: precios y config siempre frescos */
+  if (url.pathname.startsWith("/api/")) {
+    event.respondWith(
+      fetch(request).catch(
+        () =>
+          new Response(JSON.stringify({ error: "Sin conexión" }), {
+            status: 503,
+            headers: { "Content-Type": "application/json" },
+          })
+      )
+    );
+    return;
+  }
 
   if (request.mode === "navigate") {
     event.respondWith(

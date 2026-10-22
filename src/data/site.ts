@@ -13,8 +13,7 @@ export const site = {
   fraseEstrategica:
     "No queremos solamente producir la leche; queremos transformar el valor de nuestro trabajo.",
   contacto: {
-    // TODO(reyer): reemplazar por el número real de WhatsApp Business (formato 57XXXXXXXXXX)
-    whatsapp: "573001234567",
+    whatsapp: "573148454059",
     horario: "Lunes a domingo · producción y entregas diarias",
     ubicacion: "Vereda Jinete, corregimiento de Rocha (Arjona), Bolívar, Colombia",
   },

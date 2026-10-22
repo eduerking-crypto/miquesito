@@ -6,23 +6,28 @@
   "description": "Miquesito — Queso costeño artesanal de la Vereda Jinete. Marca de PROLACJIN / ASOPEGAJIN.",
   "scripts": {
     "dev": "vite",
+    "dev:api": "wrangler dev",
     "build": "tsc -b && vite build",
     "preview": "vite preview",
-    "check": "tsc -b"
+    "check": "tsc -b && tsc -p worker",
+    "deploy": "npm run build && wrangler deploy"
   },
   "dependencies": {
+    "hono": "^4.13.13",
     "lucide-react": "^1.61.0",
     "react": "^19.3.1",
     "react-dom": "^19.3.1",
     "react-router-dom": "^7.18.4"
   },
   "devDependencies": {
+    "@cloudflare/workers-types": "^5.20261022.1",
     "@tailwindcss/vite": "^4.3.3",
     "@types/react": "^19.3.0",
     "@types/react-dom": "^19.3.0",
     "@vitejs/plugin-react": "^6.1.2",
     "tailwindcss": "^4.3.3",
     "typescript": "^7.0.2",
-    "vite": "^8.3.5"
+    "vite": "^8.3.5",
+    "wrangler": "^4.152.0"
   }
 }

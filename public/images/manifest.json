@@ -1,0 +1,123 @@
+[
+  {
+    "archivo": "hero-campo.jpg",
+    "alt": "Hato de ganado pastando en la sabana bajo la luz dorada del atardecer caribeño",
+    "fuente": "https://unsplash.com/photos/plktxJ7xeuk",
+    "usos": [
+      "hero"
+    ],
+    "autor": "Febiyan",
+    "id_unsplash": "plktxJ7xeuk"
+  },
+  {
+    "archivo": "proceso-empaque.jpg",
+    "alt": "Quesos apilados y listos para el empaque y la venta",
+    "fuente": "https://unsplash.com/photos/YW_5rJvAdKw",
+    "usos": [
+      "proceso:paso-5"
+    ],
+    "autor": "Azzedine Rouichi",
+    "id_unsplash": "YW_5rJvAdKw"
+  },
+  {
+    "archivo": "proceso-entrega.jpg",
+    "alt": "Puesto de queso en la plaza de mercado, entrega al detalle",
+    "fuente": "https://unsplash.com/photos/_kF5i-dIO_4",
+    "usos": [
+      "proceso:paso-6"
+    ],
+    "autor": "Luba Glazunova",
+    "id_unsplash": "_kF5i-dIO_4"
+  },
+  {
+    "archivo": "proceso-molde.jpg",
+    "alt": "Manos del quesero moldeando la cuajada",
+    "fuente": "https://unsplash.com/photos/ML31f7FW5wY",
+    "usos": [
+      "proceso:paso-4"
+    ],
+    "autor": "Ivan Pergasi",
+    "id_unsplash": "ML31f7FW5wY"
+  },
+  {
+    "archivo": "proceso-ordeño.jpg",
+    "alt": "Cantinas metálicas para acopio y transporte de leche fresca en la finca",
+    "fuente": "https://unsplash.com/photos/5lTByrdKv7U",
+    "usos": [
+      "proceso:paso-2"
+    ],
+    "autor": "Vanessa Schulze",
+    "id_unsplash": "5lTByrdKv7U"
+  },
+  {
+    "archivo": "proceso-tina.jpg",
+    "alt": "Trabajo artesanal del queso en las tinas de la planta",
+    "fuente": "https://unsplash.com/photos/HgbKnsaAu_0",
+    "usos": [
+      "proceso:paso-3"
+    ],
+    "autor": "Caroline Roose",
+    "id_unsplash": "HgbKnsaAu_0"
+  },
+  {
+    "archivo": "proceso-vacas.jpg",
+    "alt": "Vacas del hato pastando en el potrero en las sabanas de Bolívar",
+    "fuente": "https://unsplash.com/photos/tGtWKDdicn4",
+    "usos": [
+      "proceso:paso-1"
+    ],
+    "autor": "Priscilla Du Preez 🇨🇦",
+    "id_unsplash": "tGtWKDdicn4"
+  },
+  {
+    "archivo": "queso-bloque.jpg",
+    "alt": "Queso blanco fresco tipo costeño sobre base de madera",
+    "fuente": "https://unsplash.com/photos/OxUaBR0ORb0",
+    "usos": [
+      "producto:queso"
+    ],
+    "autor": "Aleksey Melkomukov",
+    "id_unsplash": "OxUaBR0ORb0"
+  },
+  {
+    "archivo": "queso-hero.jpg",
+    "alt": "Quesos artesanales madurando sobre tabla de madera rústica",
+    "fuente": "https://unsplash.com/photos/8YmAPk1Uq_U",
+    "usos": [
+      "hero-secundario",
+      "producto:queso"
+    ],
+    "autor": "olimpia campean",
+    "id_unsplash": "8YmAPk1Uq_U"
+  },
+  {
+    "archivo": "receta-arepa.jpg",
+    "alt": "Arepa de maíz con queso costeño recién preparada",
+    "fuente": "https://unsplash.com/photos/PBjdG4umOEY",
+    "usos": [
+      "receta:arepas-con-queso"
+    ],
+    "autor": "Frederick Medina",
+    "id_unsplash": "PBjdG4umOEY"
+  },
+  {
+    "archivo": "receta-yuca.jpg",
+    "alt": "Yuca fresca de la costa, base de las recetas tradicionales",
+    "fuente": "https://unsplash.com/photos/0psoaGSZs-4",
+    "usos": [
+      "receta:yuca-con-queso"
+    ],
+    "autor": "Sara Gomes",
+    "id_unsplash": "0psoaGSZs-4"
+  },
+  {
+    "archivo": "suero-botella.jpg",
+    "alt": "Frasco de vidrio con leche fresca para la elaboración de suero costeño",
+    "fuente": "https://unsplash.com/photos/S1HuosAnX-Y",
+    "usos": [
+      "producto:suero"
+    ],
+    "autor": "Nikolai Chernichenko",
+    "id_unsplash": "S1HuosAnX-Y"
+  }
+]
