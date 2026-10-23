@@ -6,14 +6,17 @@ import {
   ChevronDown,
   Clock,
   Droplets,
+  GraduationCap,
   Hand,
   HeartHandshake,
   MapPin,
   Milk,
   PackageCheck,
   Quote,
+  Recycle,
   Store,
   Sunrise,
+  TreePine,
   Truck,
   Wheat,
 } from "lucide-react";
@@ -67,7 +70,7 @@ function Hero() {
 
   return (
     <section className="relative flex min-h-[92svh] items-center overflow-hidden bg-verde-950">
-      <div className="absolute inset-0">
+      <div className="hero-foto absolute inset-0">
         <img
           src={config.hero.imagen || "/images/hero-campo.jpg"}
           alt="Hato de ganado de la Vereda Jinete pastando en la sabana bajo luz dorada"
@@ -84,49 +87,52 @@ function Hero() {
 
       <div className="container-x relative grid gap-10 py-24 sm:py-28">
         <div className="max-w-3xl">
-          <Reveal>
+          <p data-load style={{ "--d": "60ms" } as React.CSSProperties}>
             <span className="eyebrow eyebrow-light">{config.hero.eyebrow}</span>
-          </Reveal>
-          <Reveal delay={1}>
-            <h1 className="mt-6 font-display text-display font-medium text-crema-50">
-              <TituloAcentuado titulo={config.hero.titulo} />
-            </h1>
-          </Reveal>
-          <Reveal delay={2}>
-            <p className="mt-6 max-w-xl text-lead text-crema-100/90">{config.hero.sub}</p>
-          </Reveal>
-          <Reveal delay={3}>
-            <div className="mt-9 flex flex-wrap gap-3">
-              <a href={wa} target="_blank" rel="noopener noreferrer" className="btn btn-oro text-base">
-                Pedir por WhatsApp
-                <ArrowRight className="flecha h-4 w-4" aria-hidden="true" />
-              </a>
-              <Link to="/proceso" className="btn btn-outline-crema text-base">
-                Ver el proceso
-                <ArrowRight className="flecha h-4 w-4" aria-hidden="true" />
-              </Link>
-            </div>
-          </Reveal>
-          <Reveal delay={3}>
-            <ul className="mt-10 flex flex-wrap gap-2.5" aria-label="Datos de la operación">
-              {chips.map((chip) => (
-                <li
-                  key={chip}
-                  className="card-glass px-4 py-2 tnum text-[11px] font-medium tracking-[0.14em] text-crema-100/90 uppercase"
-                >
-                  {chip}
-                </li>
-              ))}
-            </ul>
-          </Reveal>
+          </p>
+          <h1 className="lines mt-6 font-display text-display font-medium text-crema-50">
+            <span className="line">
+              <span data-line style={{ "--i": 0 } as React.CSSProperties}>
+                <TituloAcentuado titulo={config.hero.titulo} />
+              </span>
+            </span>
+          </h1>
+          <p data-load style={{ "--d": "420ms" } as React.CSSProperties} className="mt-6 max-w-xl text-lead text-crema-100/90">
+            {config.hero.sub}
+          </p>
+          <div data-load style={{ "--d": "540ms" } as React.CSSProperties} className="mt-9 flex flex-wrap gap-3">
+            <a href={wa} target="_blank" rel="noopener noreferrer" className="btn btn-oro text-base">
+              Pedir por WhatsApp
+              <ArrowRight className="flecha h-4 w-4" aria-hidden="true" />
+            </a>
+            <Link to="/proceso" className="btn btn-outline-crema text-base">
+              Ver el proceso
+              <ArrowRight className="flecha h-4 w-4" aria-hidden="true" />
+            </Link>
+          </div>
+          <ul
+            data-load
+            style={{ "--d": "660ms" } as React.CSSProperties}
+            className="mt-10 flex flex-wrap gap-2.5"
+            aria-label="Datos de la operación"
+          >
+            {chips.map((chip) => (
+              <li
+                key={chip}
+                className="card-glass tnum px-4 py-2 text-[11px] font-medium tracking-[0.14em] text-crema-100/90 uppercase"
+              >
+                {chip}
+              </li>
+            ))}
+          </ul>
         </div>
       </div>
 
       <div
         aria-hidden="true"
-        className="absolute bottom-6 left-1/2 hidden -translate-x-1/2 sm:flex flex-col items-center gap-1 text-crema-100/60"
+        className="absolute bottom-6 left-1/2 hidden -translate-x-1/2 flex-col items-center gap-1 text-crema-100/60 sm:flex"
       >
-        <span className="tnum text-[10px] tracking-[0.3em] uppercase">Descubra</span>
+        <span className="text-[10px] tracking-[0.3em] uppercase">Descubra</span>
         <ChevronDown className="h-5 w-5 animate-bounce" />
       </div>
     </section>
@@ -418,6 +424,73 @@ function Impacto() {
   );
 }
 
+function AmbienteTeaser() {
+  return (
+    <section className="bg-mesh-claro py-24">
+      <div className="container-x">
+        <div className="grid items-center gap-12 lg:grid-cols-[1.05fr_0.95fr]">
+          <Reveal>
+            <SectionHeading
+              eyebrow="Ambiente"
+              titulo={
+                <>
+                  La sabana también es <em className="italic">parte del queso</em>
+                </>
+              }
+              bajada="El sabor de Miquesito nace de un paisaje vivo: pastos, árboles y aguas que cuidamos con abono orgánico, fertilización consciente y educación ambiental."
+            />
+            <Link to="/ambiente" className="btn btn-outline btn-sm mt-8 px-6 py-3.5">
+              Explorar la sección ambiental
+              <ArrowRight className="flecha h-4 w-4" aria-hidden="true" />
+            </Link>
+          </Reveal>
+          <Reveal delay={1}>
+            <div className="group relative overflow-hidden rounded-2xl shadow-[0_36px_80px_-30px_rgba(18,59,23,0.4)]">
+              <img
+                src="/images/ambiente-reforestacion.jpg"
+                alt="Manos plantando un árbol joven en la sabana"
+                loading="lazy"
+                className="aspect-[4/3] w-full object-cover transition-transform duration-700 group-hover:scale-105"
+              />
+              <figcaption className="card-glass absolute right-4 bottom-4 px-4 py-2 text-xs font-medium text-crema-50">
+                Reforestación en la Vereda Jinete
+              </figcaption>
+            </div>
+          </Reveal>
+        </div>
+
+        <ul className="mt-12 grid gap-5 sm:grid-cols-3">
+          {[
+            {
+              Icono: Recycle,
+              titulo: "Abono orgánico",
+              texto: "Del estiércol del hato al compost que devuelve la vida al pasto.",
+            },
+            {
+              Icono: TreePine,
+              titulo: "Reforestación",
+              texto: "Árboles que dan sombra, protegen el suelo y abrazan los caños.",
+            },
+            {
+              Icono: GraduationCap,
+              titulo: "Educación ambiental",
+              texto: "Una comunidad que entiende su territorio lo cuida de por vida.",
+            },
+          ].map(({ Icono, titulo, texto }, i) => (
+            <Reveal key={titulo} delay={(i + 1) as 1 | 2 | 3}>
+              <li className="card card-hover h-full p-7">
+                <Icono className="h-6 w-6 text-verde-700" aria-hidden="true" />
+                <h3 className="mt-3 font-display text-lg font-semibold text-verde-950">{titulo}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-verde-950/70">{texto}</p>
+              </li>
+            </Reveal>
+          ))}
+        </ul>
+      </div>
+    </section>
+  );
+}
+
 function Pedido() {
   return (
     <section className="bg-mesh-claro py-24">
@@ -596,6 +669,7 @@ export function Home() {
       <WaveDivider color="var(--color-verde-950)" />
       <Impacto />
       <WaveDivider flip />
+      <AmbienteTeaser />
       <Pedido />
       <RecetasHome />
       <FaqHome />

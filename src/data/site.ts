@@ -9,7 +9,7 @@ export const site = {
   origen: "Vereda Jinete · Corregimiento de Rocha · Arjona, Bolívar",
   dominio: "miquesito.com",
   propuesta:
-    "Transformamos la leche de los pequeños ganaderos de la Vereda Jinete en queso costeño y suero artesanales, elaborados a mano todos los días.",
+    "Transformamos la leche de los pequeños ganaderos de la Vereda Jinete en queso costeño y suero artesanales, elaborados a mano todos los días, con el sabor y la honestidad de las sabanas de Bolívar.",
   fraseEstrategica:
     "No queremos solamente producir la leche; queremos transformar el valor de nuestro trabajo.",
   contacto: {
@@ -32,10 +32,73 @@ export const site = {
     "Oportunidades",
   ],
   mision:
-    "Transformar la leche producida por pequeños ganaderos de la Vereda Jinete vinculados a ASOPEGAJIN en productos lácteos con valor agregado, calidad, presentación y servicio orientados a las necesidades de nuestros clientes, fortaleciendo la capacidad productiva de la asociación, generando mayores oportunidades para sus productores y contribuyendo al desarrollo económico del territorio.",
+    "Transformar la leche producida por los pequeños ganaderos de la Vereda Jinete vinculados a ASOPEGAJIN en productos lácteos con valor agregado, con calidad, presentación y servicio orientados a las necesidades de nuestros clientes; fortalecer la capacidad productiva de la asociación, generar mayores oportunidades para sus productores y contribuir al desarrollo económico del territorio.",
   vision:
-    "Ser una iniciativa empresarial aliada de ASOPEGAJIN, reconocida en la región por transformar y agregar valor a la producción de leche de sus pequeños ganaderos, por la calidad y presentación de sus productos y por su identidad territorial, consolidando una operación sostenible que fortalezca a los productores y amplíe responsablemente sus mercados y líneas de productos.",
+    "Ser una iniciativa empresarial aliada de ASOPEGAJIN, reconocida en la región por transformar y agregar valor a la producción de leche de sus pequeños ganaderos; por la calidad y presentación de sus productos, y por su identidad territorial, consolidando una operación sostenible que fortalezca a los productores y amplíe responsablemente sus mercados y líneas de productos.",
 };
+
+/* ————— Sección ambiental ————— */
+
+export const ambiente = {
+  eyebrow: "Cuidamos la sabana",
+  titulo: "La sabana también es parte del queso",
+  intro:
+    "La leche que transformamos nace de un paisaje: pastos, árboles, aguas y ganado que conviven desde hace generaciones en la Vereda Jinete. Cuidar ese paisaje es cuidar el sabor del queso y el futuro de la comunidad.",
+  mensaje:
+    "Cada porción de queso Miquesito nace de ese equilibrio. Por eso, además de producir, cuidamos y enseñamos a cuidar.",
+  pilares: [
+    {
+      id: "abono",
+      foto: "/images/ambiente-abono.jpg",
+      alt: "Manos con abono orgánico de compost y tierra oscura",
+      titulo: "Abono orgánico",
+      texto:
+        "El estiércol del hato no es un desecho: bien compostado se convierte en abono que devuelve al pasto los nutrientes que el ganado toma. Así se cierra el ciclo, se gasta menos en insumos y el suelo queda más vivo cada año.",
+    },
+    {
+      id: "fertilizacion",
+      foto: "/images/ambiente-fertilizante.jpg",
+      alt: "Campo verde con colinas y árboles, pastos sanos",
+      titulo: "Fertilización consciente",
+      texto:
+        "Un pasto bien nutrido es la base de una buena leche. Por eso la fertilización se hace con criterio: analizar primero el suelo, aplicar solo lo que hace falta y guardar distancia de las fuentes de agua.",
+    },
+    {
+      id: "reforestacion",
+      foto: "/images/ambiente-reforestacion.jpg",
+      alt: "Manos sosteniendo un árbol joven con sus raíces",
+      titulo: "Reforestación",
+      texto:
+        "Los árboles dan sombra al ganado, protegen el suelo y abrazan los caños y las ciénagas. Recuperar árboles en las fincas y en las rondas hídricas es sembrar agua fresca para el futuro de la sabana.",
+    },
+    {
+      id: "agua",
+      foto: "/images/ambiente-agua.jpg",
+      alt: "Río de aguas limpias fluyendo entre los árboles",
+      titulo: "Cuidado del agua",
+      texto:
+        "Nuestra región vive de sus aguas: de ellas bebe el ganado y de ellas dependen las comunidades. Proteger las fuentes, conservar su ronda forestal y evitar que lleguen residuos a los caños es tarea de todos los días.",
+    },
+    {
+      id: "ganaderia",
+      foto: "/images/ambiente-sabana.jpg",
+      alt: "Vacas pastando en un prado verde rodeado de árboles",
+      titulo: "Ganadería en armonía",
+      texto:
+        "La ganadería artesanal no necesita arrasar el paisaje. Potreros con árboles, sombra para el hato y descanso rotativo de los pastos son la manera tradicional de producir sin agotar la tierra.",
+    },
+    {
+      id: "educacion",
+      foto: "/images/ambiente-educacion.jpg",
+      alt: "Niña aprendiendo en el campo mientras alimenta las ovejas",
+      titulo: "Educación ambiental",
+      texto:
+        "Lo que se aprende en el campo se respeta de por vida. Compartimos con niños, jóvenes y vecinos el valor del agua, del suelo y de los árboles, porque la mejor política ambiental es una comunidad que entiende su territorio.",
+    },
+  ],
+};
+
+/* ————— Productos ————— */
 
 export type Producto = {
   id: string;
@@ -56,7 +119,7 @@ export const productos: Producto[] = [
     nombre: "Queso costeño",
     apodo: "El de todos los días",
     descripcion:
-      "Leche fresca de la mañana, cuajo y sal. Firme y sabroso como manda la tradición de las sabanas de Bolívar.",
+      "Leche fresca de la mañana, cuajo y sal. Firme y sabroso, como manda la tradición de las sabanas de Bolívar.",
     precio: "$19.000 – $20.000 / kg",
     precioRef: 19500,
     unidad: "kg",
@@ -75,7 +138,7 @@ export const productos: Producto[] = [
     nombre: "Suero de leche",
     apodo: "El compañero de la yuca",
     descripcion:
-      "Suero fresco de la elaboración del queso: la bebida que acompaña las comidas de las sabanas, bien fría.",
+      "Suero fresco de la elaboración del queso: la bebida que acompaña las comidas de las sabanas, servida bien fría.",
     precio: "$5.000 / botella de 1 L",
     precioRef: 5000,
     unidad: "botella",
@@ -90,30 +153,32 @@ export const productos: Producto[] = [
   },
 ];
 
+/* ————— Proceso ————— */
+
 export const proceso = [
   {
     icono: "Sunrise",
     titulo: "Ordeño al amanecer",
     texto:
-      "Cada mañana los ganaderos de ASOPEGAJIN ordeñan sus vacas en la Vereda Jinete. Esa leche fresca es el punto de partida de todo.",
+      "Cada mañana, los ganaderos de ASOPEGAJIN ordeñan sus vacas en la Vereda Jinete. Esa leche fresca es el punto de partida de todo.",
   },
   {
     icono: "Milk",
     titulo: "Recepción y filtrado",
     texto:
-      "Recibimos y filtramos la leche del día. Solo trabajamos con lo que llega fresco de nuestros ganaderos.",
+      "Recibimos y filtramos la leche del día. Solo trabajamos con lo que llega fresco de nuestros ganaderos, nada de acopios externos.",
   },
   {
     icono: "Droplets",
     titulo: "Cuajo y sal en la tina",
     texto:
-      "La leche pasa a la tina artesanal, donde el cuajo y la sal hacen su trabajo lento, como se ha hecho siempre.",
+      "La leche pasa a la tina artesanal, donde el cuajo y la sal hacen su trabajo lento, como se ha hecho siempre en la sabana.",
   },
   {
     icono: "Hand",
     titulo: "Moldeado a mano",
     texto:
-      "La cuajada se corta y se prensa en moldes artesanales, dando forma al queso bloque de 8 a 10 kilos.",
+      "La cuajada se corta y se prensa en moldes artesanales, hasta dar forma al bloque de 8 a 10 kilos que identifica al costeño.",
   },
   {
     icono: "PackageCheck",
@@ -125,26 +190,30 @@ export const proceso = [
     icono: "Truck",
     titulo: "Entrega del mismo día",
     texto:
-      "El queso del amanecer viaja cada día a tiendas, distribuidores y hogares de la región.",
+      "El queso del amanecer viaja cada día a tiendas, distribuidores y hogares de la región, con el sabor intacto de la mañana.",
   },
 ];
+
+/* ————— Valores ————— */
 
 export const valores = [
   { nombre: "Origen", texto: "Valoramos la procedencia y el territorio de la Vereda Jinete." },
   { nombre: "Trabajo", texto: "Reconocemos el esfuerzo de quienes producen y transforman." },
-  { nombre: "Calidad", texto: "Buscamos mejora continua en producto, proceso y presentación." },
+  { nombre: "Calidad", texto: "Buscamos la mejora continua del producto, del proceso y de la presentación." },
   { nombre: "Confianza", texto: "Construimos relaciones responsables con clientes y aliados." },
   { nombre: "Comunidad", texto: "Generamos valor local mediante el trabajo colectivo." },
   { nombre: "Transformación", texto: "Pasamos de materia prima a productos con mayor valor agregado." },
   { nombre: "Sostenibilidad", texto: "Crecemos manteniendo una operación económicamente viable." },
 ];
 
+/* ————— Historia ————— */
+
 export const historia = [
   {
     capitulo: "01",
     titulo: "La leche salía sin su historia",
     texto:
-      "Durante años, los pequeños ganaderos de la Vereda Jinete vendieron su leche como materia prima. El esfuerzo era enorme, pero buena parte del valor se quedaba afuera del territorio.",
+      "Durante años, los pequeños ganaderos de la Vereda Jinete vendieron su leche como materia prima. El esfuerzo era enorme, pero buena parte del valor se quedaba fuera del territorio.",
   },
   {
     capitulo: "02",
@@ -159,6 +228,8 @@ export const historia = [
       "Cada bloque de queso lleva el trabajo diario de familias ganaderas de la Vereda Jinete. Miquesito es la marca con la que ese queso llega a tiendas y hogares, todos los días.",
   },
 ];
+
+/* ————— Tiendas ————— */
 
 export const tiendas = {
   titulo: "Queso regional con marca, para su negocio",
@@ -175,15 +246,18 @@ export const tiendas = {
   pasos: [
     { titulo: "Escríbanos", texto: "Cuéntenos dónde está su negocio y qué cantidades maneja." },
     { titulo: "Reciba la ficha comercial", texto: "Le enviamos presentaciones, precios y condiciones por WhatsApp." },
-    { titulo: "Reciba queso fresco", texto: "Entrega diaria desde la Vereda Jinete, de planta a su mostrador." },
+    { titulo: "Reciba queso fresco", texto: "Entrega diaria desde la Vereda Jinete, de la planta a su mostrador." },
   ],
 };
+
+/* ————— Recetas ————— */
 
 export const recetas = [
   {
     nombre: "Arepa de maíz con queso costeño",
     tiempo: "20 min",
     ocasion: "Desayuno",
+    foto: "/images/receta-arepa.jpg",
     ingredientes: [
       "1 taza de masa de maíz costeño",
       "Queso costeño Miquesito desmenuzado al gusto",
@@ -192,7 +266,7 @@ export const recetas = [
     ],
     pasos: [
       "Forme las arepas con la masa e incorpore el queso desmenuzado en el centro.",
-      "Selle en plancha caliente 3 a 4 minutos por lado, hasta dorar.",
+      "Selle en plancha caliente de 3 a 4 minutos por lado, hasta dorar.",
       "Sirva caliente, con café o chocolate.",
     ],
   },
@@ -200,6 +274,7 @@ export const recetas = [
     nombre: "Yuca con suero",
     tiempo: "25 min",
     ocasion: "Almuerzo de sabanas",
+    foto: "/images/receta-yuca.jpg",
     ingredientes: [
       "Yuca fresca pelada y partida",
       "Suero Miquesito bien frío (1 botella rinde 4 porciones)",
@@ -207,14 +282,15 @@ export const recetas = [
     ],
     pasos: [
       "Cocine la yuca en agua con sal hasta que ablande.",
-      "Sirva la yuca caliente y bañe con el suero frío.",
-      "El contraste caliente-frío es el secreto de las sabanas.",
+      "Sirva la yuca caliente y báñela con el suero frío.",
+      "El contraste entre caliente y frío es el secreto de las sabanas.",
     ],
   },
   {
     nombre: "Tostones con queso rallado",
     tiempo: "15 min",
     ocasion: "Pasabocas",
+    foto: "/images/queso-hero.jpg",
     ingredientes: [
       "2 plátanos verdes",
       "Queso costeño Miquesito",
@@ -223,10 +299,12 @@ export const recetas = [
     pasos: [
       "Corte el plátano en rodajas, fríalas, aplástelas y devuélvalas al aceite.",
       "Escurra y agregue sal al gusto.",
-      "Ralle queso costeño encima mientras están bien calientes.",
+      "Ralle el queso costeño encima mientras están bien calientes.",
     ],
   },
 ];
+
+/* ————— FAQ ————— */
 
 export const faq = [
   {
@@ -242,7 +320,7 @@ export const faq = [
   {
     pregunta: "¿Entregan a tiendas y otros municipios?",
     respuesta:
-      "Sí. Todos los días entregamos a tiendas, distribuidores y consumidores de la región. Cuéntenos su ubicación por WhatsApp y le confirmamos cobertura.",
+      "Sí. Todos los días entregamos a tiendas, distribuidores y consumidores de la región. Cuéntenos su ubicación por WhatsApp y le confirmamos la cobertura.",
   },
   {
     pregunta: "¿Cómo se elabora el queso?",
@@ -252,7 +330,7 @@ export const faq = [
   {
     pregunta: "¿Manejan precio especial para tiendas?",
     respuesta:
-      "Sí, tenemos condiciones para tiendas y distribuidores. Solicite la ficha comercial por WhatsApp y la enviamos el mismo día.",
+      "Sí, tenemos condiciones para tiendas y distribuidores. Solicite la ficha comercial por WhatsApp y se la enviamos el mismo día.",
   },
   {
     pregunta: "¿De dónde es el queso?",

@@ -8,6 +8,7 @@ import { Proceso } from "./pages/Proceso";
 import { Tiendas } from "./pages/Tiendas";
 import { Recetas } from "./pages/Recetas";
 import { Contacto } from "./pages/Contacto";
+import { Ambiente } from "./pages/Ambiente";
 import { Admin } from "./pages/Admin";
 
 function ScrollToTop() {
@@ -28,6 +29,7 @@ function RutasPublicas() {
         <Route path="/proceso" element={<Proceso />} />
         <Route path="/tiendas" element={<Tiendas />} />
         <Route path="/recetas" element={<Recetas />} />
+        <Route path="/ambiente" element={<Ambiente />} />
         <Route path="/contacto" element={<Contacto />} />
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>

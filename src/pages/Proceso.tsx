@@ -70,7 +70,7 @@ export function Proceso() {
                       {paso.texto}
                     </p>
                   </div>
-                  <figure className="group relative order-1 aspect-[4/3] overflow-hidden rounded-3xl shadow-[0_28px_60px_-24px_rgba(18,59,23,0.4)] sm:order-2">
+                  <figure className="group relative order-1 aspect-[4/3] overflow-hidden rounded-2xl shadow-[0_28px_60px_-24px_rgba(18,59,23,0.4)] sm:order-2">
                     <img
                       src={iconosNombres[paso.icono]}
                       alt={paso.titulo}

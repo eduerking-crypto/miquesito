@@ -119,5 +119,65 @@
     ],
     "autor": "Nikolai Chernichenko",
     "id_unsplash": "S1HuosAnX-Y"
+  },
+  {
+    "archivo": "ambiente-reforestacion.jpg",
+    "alt": "Manos sosteniendo un árbol joven con sus raíces, listo para plantar en las jornadas de reforestación",
+    "fuente": "https://unsplash.com/photos/EkEdHarUPTs",
+    "usos": [
+      "ambiente:reforestacion"
+    ],
+    "autor": "Vitor Monthay",
+    "id_unsplash": "EkEdHarUPTs"
+  },
+  {
+    "archivo": "ambiente-abono.jpg",
+    "alt": "Manos con abono orgánico de compost, tierra oscura y húmeda para fertilizar los cultivos",
+    "fuente": "https://unsplash.com/photos/bQ9y93kdk4c",
+    "usos": [
+      "ambiente:abono"
+    ],
+    "autor": "Alicia Christin Gerald",
+    "id_unsplash": "bQ9y93kdk4c"
+  },
+  {
+    "archivo": "ambiente-fertilizante.jpg",
+    "alt": "Campo verde y exuberante con colinas y árboles, pastos sanos por la fertilización consciente del suelo",
+    "fuente": "https://unsplash.com/photos/9d33wIMMzoE",
+    "usos": [
+      "ambiente:fertilizante"
+    ],
+    "autor": "Dawid Zawiła",
+    "id_unsplash": "9d33wIMMzoE"
+  },
+  {
+    "archivo": "ambiente-agua.jpg",
+    "alt": "Río de aguas limpias fluyendo entre los árboles del bosque",
+    "fuente": "https://unsplash.com/photos/rW5gncV7HJs",
+    "usos": [
+      "ambiente:agua"
+    ],
+    "autor": "Martijn Vonk",
+    "id_unsplash": "rW5gncV7HJs"
+  },
+  {
+    "archivo": "ambiente-sabana.jpg",
+    "alt": "Vacas pastando en un prado verde rodeado de árboles",
+    "fuente": "https://unsplash.com/photos/0Ar518oudlI",
+    "usos": [
+      "ambiente:sabana"
+    ],
+    "autor": "Jaap Straydog",
+    "id_unsplash": "0Ar518oudlI"
+  },
+  {
+    "archivo": "ambiente-educacion.jpg",
+    "alt": "Niña aprendiendo en el campo mientras alimenta las ovejas, educación ambiental en la finca",
+    "fuente": "https://unsplash.com/photos/tM6F44Ljx5k",
+    "usos": [
+      "ambiente:educacion"
+    ],
+    "autor": "Margo Evardson",
+    "id_unsplash": "tM6F44Ljx5k"
   }
 ]

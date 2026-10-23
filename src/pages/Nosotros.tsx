@@ -28,7 +28,7 @@ export function Nosotros() {
             />
           </Reveal>
           <Reveal delay={1}>
-            <figure className="group relative aspect-[4/3] overflow-hidden rounded-3xl shadow-[0_36px_80px_-30px_rgba(18,59,23,0.4)]">
+            <figure className="group relative aspect-[4/3] overflow-hidden rounded-2xl shadow-[0_36px_80px_-30px_rgba(18,59,23,0.4)]">
               <img
                 src="/images/proceso-vacas.jpg"
                 alt="Ganado de la Vereda Jinete pastando en la sabana"

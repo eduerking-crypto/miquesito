@@ -12,6 +12,7 @@ const nav = [
   { to: "/nosotros", label: "Nosotros" },
   { to: "/productos", label: "Productos" },
   { to: "/proceso", label: "Proceso" },
+  { to: "/ambiente", label: "Ambiente" },
   { to: "/tiendas", label: "Tiendas" },
   { to: "/recetas", label: "Recetas" },
   { to: "/contacto", label: "Contacto" },
@@ -170,7 +171,12 @@ function Footer() {
               </Link>
             </li>
             <li>
-              <Link to="/tiendas" className="text-crema-200/80 transition-colors hover:text-crema-200/70">
+              <Link to="/ambiente" className="text-crema-200/85 transition-colors hover:text-oro-300">
+                Ambiente y sabana
+              </Link>
+            </li>
+            <li>
+              <Link to="/tiendas" className="text-crema-200/85 transition-colors hover:text-oro-300">
                 Ficha para tiendas
               </Link>
             </li>
