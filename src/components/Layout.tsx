@@ -50,7 +50,7 @@ function Navbar() {
                 end={item.to === "/"}
                 className={({ isActive }) =>
                   `nav-link rounded-full px-3.5 py-2 text-[0.92rem] font-medium ${
-                    isActive ? "text-verde-900" : "text-verde-900/65 hover:text-verde-900"
+                    isActive ? "text-verde-950" : "text-verde-950/65 hover:text-verde-950"
                   }`
                 }
               >
@@ -103,7 +103,7 @@ function Navbar() {
                     to={item.to}
                     onClick={() => setAbierto(false)}
                     className={`block rounded-xl px-4 py-3 text-base font-medium ${
-                      activo ? "bg-verde-100 text-verde-900" : "text-verde-900/75 hover:bg-verde-50"
+                      activo ? "bg-verde-100 text-verde-950" : "text-verde-950/70 hover:bg-verde-50"
                     }`}
                   >
                     {item.label}
@@ -148,7 +148,7 @@ function Footer() {
           <ul className="mt-4 grid gap-2.5 text-sm">
             {nav.map((item) => (
               <li key={item.to}>
-                <Link to={item.to} className="text-crema-200/85 transition-colors hover:text-oro-300">
+                <Link to={item.to} className="text-crema-200/80 transition-colors hover:text-crema-200/70">
                   {item.label}
                 </Link>
               </li>
@@ -160,22 +160,22 @@ function Footer() {
           <h3 className="eyebrow eyebrow-left eyebrow-light">Productos</h3>
           <ul className="mt-4 grid gap-2.5 text-sm">
             <li>
-              <Link to="/productos" className="text-crema-200/85 transition-colors hover:text-oro-300">
+              <Link to="/productos" className="text-crema-200/80 transition-colors hover:text-crema-200/70">
                 Queso costeño
               </Link>
             </li>
             <li>
-              <Link to="/productos" className="text-crema-200/85 transition-colors hover:text-oro-300">
+              <Link to="/productos" className="text-crema-200/80 transition-colors hover:text-crema-200/70">
                 Suero de leche
               </Link>
             </li>
             <li>
-              <Link to="/tiendas" className="text-crema-200/85 transition-colors hover:text-oro-300">
+              <Link to="/tiendas" className="text-crema-200/80 transition-colors hover:text-crema-200/70">
                 Ficha para tiendas
               </Link>
             </li>
             <li>
-              <Link to="/recetas" className="text-crema-200/85 transition-colors hover:text-oro-300">
+              <Link to="/recetas" className="text-crema-200/80 transition-colors hover:text-crema-200/70">
                 Recetas
               </Link>
             </li>
@@ -184,13 +184,13 @@ function Footer() {
 
         <div>
           <h3 className="eyebrow eyebrow-left eyebrow-light">Contacto</h3>
-          <ul className="mt-4 grid gap-3 text-sm text-crema-200/85">
+          <ul className="mt-4 grid gap-3 text-sm text-crema-200/80">
             <li className="flex items-start gap-2.5">
-              <MapPin className="mt-0.5 h-4 w-4 flex-none text-oro-300" aria-hidden="true" />
+              <MapPin className="mt-0.5 h-4 w-4 flex-none text-crema-200/70" aria-hidden="true" />
               <span>{site.contacto.ubicacion}</span>
             </li>
             <li className="flex items-start gap-2.5">
-              <Clock className="mt-0.5 h-4 w-4 flex-none text-oro-300" aria-hidden="true" />
+              <Clock className="mt-0.5 h-4 w-4 flex-none text-crema-200/70" aria-hidden="true" />
               <span>{site.contacto.horario}</span>
             </li>
           </ul>

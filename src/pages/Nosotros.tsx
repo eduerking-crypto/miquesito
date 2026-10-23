@@ -20,7 +20,7 @@ export function Nosotros() {
               eyebrow="Quiénes somos"
               titulo={
                 <>
-                  Una vereda que decidió <em className="text-oro-600 italic">transformar</em> su
+                  Una vereda que decidió <em className="italic">transformar</em> su
                   leche
                 </>
               }
@@ -44,13 +44,13 @@ export function Nosotros() {
       <section className="bg-crema-50 py-20 sm:py-24">
         <div className="container-x grid gap-12 lg:grid-cols-[1fr_1fr] lg:items-center">
           <Reveal>
-            <p className="text-lg leading-relaxed text-verde-900/80">
+            <p className="text-lg leading-relaxed text-verde-950/75">
               {site.empresa} nace como iniciativa aliada y estrechamente vinculada a{" "}
               <strong>{site.alianzaCompleta}</strong>. La asociación constituye la base social,
               productiva y comunitaria del proyecto: reúne a pequeños ganaderos que encuentran en la
               leche su sustento diario.
             </p>
-            <p className="mt-5 text-lg leading-relaxed text-verde-900/80">
+            <p className="mt-5 text-lg leading-relaxed text-verde-950/75">
               Durante mucho tiempo, la producción salía del territorio como materia prima. Hoy, esa
               misma leche se transforma aquí, en queso y suero con valor agregado.
             </p>
@@ -84,13 +84,13 @@ export function Nosotros() {
             {historia.map((cap, i) => (
               <Reveal key={cap.capitulo} delay={(i + 1) as 1 | 2 | 3}>
                 <li className="card card-hover h-full p-8">
-                  <span className="font-display text-5xl font-semibold text-oro-400/60">
+                  <span className="font-display text-5xl font-semibold text-verde-950/30/60">
                     {cap.capitulo}
                   </span>
                   <h3 className="mt-4 font-display text-xl leading-snug font-semibold text-verde-950">
                     {cap.titulo}
                   </h3>
-                  <p className="mt-3 text-sm leading-relaxed text-verde-900/70">{cap.texto}</p>
+                  <p className="mt-3 text-sm leading-relaxed text-verde-950/70">{cap.texto}</p>
                 </li>
               </Reveal>
             ))}
@@ -102,16 +102,16 @@ export function Nosotros() {
         <div className="container-x grid gap-7 lg:grid-cols-2">
           <Reveal>
             <article className="card card-hover h-full p-9">
-              <Sprout className="h-7 w-7 text-verde-600" aria-hidden="true" />
+              <Sprout className="h-7 w-7 text-verde-950/60" aria-hidden="true" />
               <h3 className="mt-4 font-display text-2xl font-semibold text-verde-950">Misión</h3>
-              <p className="mt-3 text-[0.95rem] leading-relaxed text-verde-900/75">{site.mision}</p>
+              <p className="mt-3 text-[0.95rem] leading-relaxed text-verde-950/70">{site.mision}</p>
             </article>
           </Reveal>
           <Reveal delay={1}>
             <article className="card card-hover h-full p-9">
-              <Leaf className="h-7 w-7 text-verde-600" aria-hidden="true" />
+              <Leaf className="h-7 w-7 text-verde-950/60" aria-hidden="true" />
               <h3 className="mt-4 font-display text-2xl font-semibold text-verde-950">Visión</h3>
-              <p className="mt-3 text-[0.95rem] leading-relaxed text-verde-900/75">{site.vision}</p>
+              <p className="mt-3 text-[0.95rem] leading-relaxed text-verde-950/70">{site.vision}</p>
             </article>
           </Reveal>
         </div>
@@ -126,8 +126,8 @@ export function Nosotros() {
             {valores.map((v, i) => (
               <Reveal key={v.nombre} delay={((i % 3) + 1) as 1 | 2 | 3}>
                 <li className="card card-hover h-full p-7">
-                  <h3 className="font-display text-lg font-semibold text-verde-800">{v.nombre}</h3>
-                  <p className="mt-2 text-sm leading-relaxed text-verde-900/70">{v.texto}</p>
+                  <h3 className="font-display text-lg font-semibold text-verde-950">{v.nombre}</h3>
+                  <p className="mt-2 text-sm leading-relaxed text-verde-950/70">{v.texto}</p>
                 </li>
               </Reveal>
             ))}
@@ -147,11 +147,11 @@ export function Nosotros() {
           </Reveal>
           <Reveal delay={1}>
             <div className="card-glass p-9">
-              <HandHeart className="h-8 w-8 text-oro-300" aria-hidden="true" />
+              <HandHeart className="h-8 w-8 text-crema-200/70" aria-hidden="true" />
               <blockquote className="mt-4 font-display text-xl leading-snug text-crema-50">
                 “{site.fraseEstrategica}”
               </blockquote>
-              <p className="mt-4 font-mono text-xs tracking-[0.18em] text-crema-200/70 uppercase">
+              <p className="mt-4 tnum text-xs tracking-[0.18em] text-crema-200/70 uppercase">
                 Equipo {site.empresa} · Vereda Jinete
               </p>
               <Link to="/productos" className="btn btn-outline-crema btn-sm mt-7 px-6 py-3.5">

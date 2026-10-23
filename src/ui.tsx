@@ -119,14 +119,16 @@ export function SectionHeading({
     <div className={centrado ? "mx-auto max-w-2xl text-center" : "max-w-2xl"}>
       <span className={`eyebrow ${claro ? "eyebrow-light" : ""}`}>{eyebrow}</span>
       <Encabezado
-        className={`mt-5 text-h2 font-semibold ${claro ? "text-crema-50" : "text-verde-950"}`}
+        className={`mt-5 text-h2 ${como === "h1" ? "font-medium" : "font-semibold"} ${
+          claro ? "text-crema-50" : "text-verde-950"
+        }`}
       >
         {titulo}
       </Encabezado>
       {bajada && (
         <p
           className={`mt-5 text-lead ${
-            claro ? "text-crema-200/85" : "text-verde-900/75"
+            claro ? "text-crema-200/80" : "text-verde-950/70"
           } ${centrado ? "mx-auto" : ""}`}
         >
           {bajada}
@@ -148,10 +150,10 @@ export function Marquee({ items }: { items: string[] }) {
       <div className="marquee-track items-center gap-10">
         {contenido.map((texto, i) => (
           <span key={i} className="flex items-center gap-10">
-            <span className="font-mono text-xs font-semibold tracking-[0.25em] whitespace-nowrap text-crema-200/60 uppercase">
+            <span className="tnum text-xs font-semibold tracking-[0.25em] whitespace-nowrap text-crema-200/60 uppercase">
               {texto}
             </span>
-            <span className="text-oro-400">✦</span>
+            <span className="text-crema-200/40">✦</span>
           </span>
         ))}
       </div>
@@ -189,13 +191,13 @@ export function CadenaValor({ oscuro = false }: { oscuro?: boolean }) {
             className={`ficha rounded-full border px-3 py-1 ${
               oscuro
                 ? "border-crema-200/25 bg-verde-900/40 text-crema-100"
-                : "border-verde-200 bg-verde-50 text-verde-700"
+                : "border-verde-200 bg-verde-50 text-verde-950"
             }`}
           >
             {paso}
           </span>
           {i < site.cadena.length - 1 && (
-            <span aria-hidden="true" className={oscuro ? "text-oro-300" : "text-oro-500"}>
+            <span aria-hidden="true" className={oscuro ? "text-crema-200/70" : "text-verde-950/45"}>
               →
             </span>
           )}

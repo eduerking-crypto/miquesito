@@ -26,7 +26,7 @@ export function Recetas() {
               eyebrow="En la mesa"
               titulo={
                 <>
-                  La cocina de las sabanas, <em className="text-oro-600 italic">con Miquesito</em>
+                  La cocina de las sabanas, <em className="italic">con Miquesito</em>
                 </>
               }
               bajada="Tres preparaciones de siempre, como se hacen en los hogares de Bolívar: simples, sabrosas y con queso fresco del día."
@@ -47,7 +47,7 @@ export function Recetas() {
                     loading="lazy"
                     className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
                   />
-                  <figcaption className="card-glass absolute right-3 bottom-3 px-3 py-1 font-mono text-[11px] font-medium text-crema-50">
+                  <figcaption className="card-glass absolute right-3 bottom-3 px-3 py-1 tnum text-[11px] font-medium text-crema-50">
                     {r.ocasion} · {r.tiempo}
                   </figcaption>
                 </figure>
@@ -58,14 +58,14 @@ export function Recetas() {
                   </h2>
 
                   <div className="mt-5">
-                    <h3 className="flex items-center gap-2 text-sm font-bold tracking-wide text-verde-800 uppercase">
-                      <UtensilsCrossed className="h-4 w-4 text-oro-600" aria-hidden="true" />
+                    <h3 className="flex items-center gap-2 text-sm font-bold tracking-wide text-verde-950 uppercase">
+                      <UtensilsCrossed className="h-4 w-4 text-verde-950/60" aria-hidden="true" />
                       Ingredientes
                     </h3>
                     <ul className="ficha mt-2.5 grid gap-1.5 text-verde-900/85">
                       {r.ingredientes.map((ing) => (
                         <li key={ing} className="flex gap-2">
-                          <span aria-hidden="true" className="text-oro-500">
+                          <span aria-hidden="true" className="text-verde-950/45">
                             •
                           </span>
                           {ing}
@@ -75,14 +75,14 @@ export function Recetas() {
                   </div>
 
                   <div className="mt-5">
-                    <h3 className="flex items-center gap-2 text-sm font-bold tracking-wide text-verde-800 uppercase">
-                      <ListChecks className="h-4 w-4 text-oro-600" aria-hidden="true" />
+                    <h3 className="flex items-center gap-2 text-sm font-bold tracking-wide text-verde-950 uppercase">
+                      <ListChecks className="h-4 w-4 text-verde-950/60" aria-hidden="true" />
                       Preparación
                     </h3>
-                    <ol className="mt-2.5 grid gap-2 text-sm leading-relaxed text-verde-900/80">
+                    <ol className="mt-2.5 grid gap-2 text-sm leading-relaxed text-verde-950/75">
                       {r.pasos.map((paso, j) => (
                         <li key={paso} className="flex gap-2.5">
-                          <span className="font-mono text-xs font-semibold text-verde-600">
+                          <span className="tnum text-xs font-semibold text-verde-950/60">
                             {String(j + 1).padStart(2, "0")}
                           </span>
                           {paso}
@@ -110,12 +110,12 @@ export function Recetas() {
         </div>
         <div className="container-x relative flex flex-col items-center text-center">
           <Reveal>
-            <ChefHat className="h-9 w-9 text-oro-300" aria-hidden="true" />
+            <ChefHat className="h-9 w-9 text-crema-200/70" aria-hidden="true" />
             <h2 className="mx-auto mt-5 max-w-xl font-display text-3xl leading-tight font-semibold text-crema-50 sm:text-4xl">
               ¿Se le antojó alguna? Pida los ingredientes hoy mismo
             </h2>
-            <p className="mt-4 flex items-center gap-2 text-base text-crema-200/85">
-              <Clock className="h-4 w-4 text-oro-300" aria-hidden="true" />
+            <p className="mt-4 flex items-center gap-2 text-base text-crema-200/80">
+              <Clock className="h-4 w-4 text-crema-200/70" aria-hidden="true" />
               Queso y suero frescos de {site.origen}, en su mesa esta semana.
             </p>
             <a

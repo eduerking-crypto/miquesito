@@ -28,7 +28,7 @@ function Stepper({
         onClick={bajar}
         disabled={valor <= min}
         aria-label={`Quitar ${unidad} de ${id}`}
-        className="flex h-10 w-10 cursor-pointer items-center justify-center rounded-full border border-crema-300 bg-white text-verde-800 transition-all hover:border-verde-400 hover:bg-verde-50 disabled:cursor-not-allowed disabled:opacity-40"
+        className="flex h-10 w-10 cursor-pointer items-center justify-center rounded-full border border-crema-300 bg-white text-verde-950 transition-all hover:border-verde-400 hover:bg-verde-50 disabled:cursor-not-allowed disabled:opacity-40"
       >
         <Minus className="h-4 w-4" aria-hidden="true" />
       </button>
@@ -43,14 +43,14 @@ function Stepper({
           const n = Number(e.target.value);
           if (!Number.isNaN(n) && n >= min) onChange(+n.toFixed(2));
         }}
-        className="campo w-24 text-center font-mono font-medium"
+        className="campo w-24 text-center tnum font-medium"
         aria-label={`Cantidad de ${unidad}`}
       />
       <button
         type="button"
         onClick={subir}
         aria-label={`Agregar ${unidad} de ${id}`}
-        className="flex h-10 w-10 cursor-pointer items-center justify-center rounded-full border border-crema-300 bg-white text-verde-800 transition-all hover:border-verde-400 hover:bg-verde-50"
+        className="flex h-10 w-10 cursor-pointer items-center justify-center rounded-full border border-crema-300 bg-white text-verde-950 transition-all hover:border-verde-400 hover:bg-verde-50"
       >
         <Plus className="h-4 w-4" aria-hidden="true" />
       </button>
@@ -127,20 +127,20 @@ export function OrderBuilder({ compacto = false }: { compacto?: boolean }) {
                 <p className="font-semibold text-verde-950">
                   {p.nombre}
                   {p.descuento_activo && p.precio_descuento && (
-                    <span className="ml-2 inline-flex items-center gap-1 rounded-full bg-oro-400/25 px-2 py-0.5 font-mono text-[10px] font-semibold tracking-wide text-oro-700 uppercase">
+                    <span className="ml-2 inline-flex items-center gap-1 rounded-full bg-verde-950/10 px-2 py-0.5 tnum text-[10px] font-semibold tracking-wide text-verde-950/75 uppercase">
                       <Tag className="h-3 w-3" aria-hidden="true" />
                       Descuento
                     </span>
                   )}
                 </p>
-                <p className="ficha mt-1 flex flex-wrap items-center gap-x-2 text-verde-600">
+                <p className="ficha mt-1 flex flex-wrap items-center gap-x-2 text-verde-950/60">
                   {p.descuento_activo && p.precio_descuento ? (
                     <>
-                      <s className="text-verde-900/40">{cop.format(p.precio_ref)}</s>
-                      <span className="font-semibold text-oro-600">
+                      <s className="text-verde-950/45">{cop.format(p.precio_ref)}</s>
+                      <span className="font-semibold text-verde-950/60">
                         {cop.format(p.precio_descuento)}
                       </span>
-                      <span className="text-verde-900/50">/ {p.unidad}</span>
+                      <span className="text-verde-950/50">/ {p.unidad}</span>
                     </>
                   ) : (
                     <span>{precioUnidad(p)}</span>
@@ -160,13 +160,13 @@ export function OrderBuilder({ compacto = false }: { compacto?: boolean }) {
         })}
 
         <div className="flex items-baseline justify-between rounded-2xl bg-verde-50 px-5 py-4">
-          <span className="ficha tracking-widest text-verde-700 uppercase">Total estimado</span>
+          <span className="ficha tracking-widest text-verde-950 uppercase">Total estimado</span>
           <span className="text-right">
-            <span className="font-mono text-2xl font-semibold text-verde-900">
+            <span className="tnum text-2xl font-semibold text-verde-950">
               {cop.format(total)}
             </span>
             {hayDescuento && (
-              <s className="ml-2 font-mono text-sm text-verde-900/40">
+              <s className="ml-2 tnum text-sm text-verde-950/45">
                 {cop.format(sinDescuento)}
               </s>
             )}
@@ -188,7 +188,7 @@ export function OrderBuilder({ compacto = false }: { compacto?: boolean }) {
           </button>
         </div>
 
-        <p className="text-xs leading-relaxed text-verde-900/60">
+        <p className="text-xs leading-relaxed text-verde-950/60">
           Precios de referencia. El valor final y la entrega se confirman en el chat con{" "}
           {site.marca}. {compacto ? "" : "Atendemos 7 días a la semana."}
         </p>

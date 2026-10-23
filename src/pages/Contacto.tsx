@@ -22,7 +22,7 @@ export function Contacto() {
               eyebrow="Contacto y pedidos"
               titulo={
                 <>
-                  Hablemos <em className="text-oro-600 italic">del queso</em>
+                  Hablemos <em className="italic">del queso</em>
                 </>
               }
               bajada="Pedidos, precios para tiendas o simplemente contarle dónde nos encuentra: todo pasa por WhatsApp."
@@ -40,13 +40,13 @@ export function Contacto() {
           <div className="grid gap-6">
             <Reveal delay={1}>
               <div className="card card-hover p-7">
-                <span className="flex h-11 w-11 items-center justify-center rounded-2xl bg-verde-100 text-verde-800">
+                <span className="flex h-11 w-11 items-center justify-center rounded-2xl bg-verde-100 text-verde-950">
                   <MessageCircle className="h-5 w-5" aria-hidden="true" />
                 </span>
                 <h2 className="mt-4 font-display text-xl font-semibold text-verde-950">
                   WhatsApp directo
                 </h2>
-                <p className="mt-2 text-sm leading-relaxed text-verde-900/75">
+                <p className="mt-2 text-sm leading-relaxed text-verde-950/70">
                   Escriba y le respondemos con precios, disponibilidad y cobertura de entrega.
                 </p>
                 <a
@@ -62,11 +62,11 @@ export function Contacto() {
 
             <Reveal delay={2}>
               <div className="card card-hover p-7">
-                <span className="flex h-11 w-11 items-center justify-center rounded-2xl bg-verde-100 text-verde-800">
+                <span className="flex h-11 w-11 items-center justify-center rounded-2xl bg-verde-100 text-verde-950">
                   <Clock className="h-5 w-5" aria-hidden="true" />
                 </span>
                 <h2 className="mt-4 font-display text-xl font-semibold text-verde-950">Horario</h2>
-                <p className="mt-2 text-sm leading-relaxed text-verde-900/75">
+                <p className="mt-2 text-sm leading-relaxed text-verde-950/70">
                   {site.contacto.horario}. El queso se elabora en la mañana y sale a entrega el
                   mismo día.
                 </p>
@@ -75,15 +75,15 @@ export function Contacto() {
 
             <Reveal delay={3}>
               <div className="card card-hover p-7">
-                <span className="flex h-11 w-11 items-center justify-center rounded-2xl bg-verde-100 text-verde-800">
+                <span className="flex h-11 w-11 items-center justify-center rounded-2xl bg-verde-100 text-verde-950">
                   <MapPin className="h-5 w-5" aria-hidden="true" />
                 </span>
                 <h2 className="mt-4 font-display text-xl font-semibold text-verde-950">Origen</h2>
-                <p className="mt-2 text-sm leading-relaxed text-verde-900/75">
+                <p className="mt-2 text-sm leading-relaxed text-verde-950/70">
                   {site.contacto.ubicacion}.
                 </p>
-                <p className="mt-3 flex items-center gap-2 text-sm font-medium text-verde-700">
-                  <Truck className="h-4 w-4 text-oro-600" aria-hidden="true" />
+                <p className="mt-3 flex items-center gap-2 text-sm font-medium text-verde-950">
+                  <Truck className="h-4 w-4 text-verde-950/60" aria-hidden="true" />
                   Entregas diarias a tiendas y hogares de la región
                 </p>
               </div>

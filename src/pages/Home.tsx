@@ -49,7 +49,7 @@ function TituloAcentuado({ titulo }: { titulo: string }) {
     <>
       {partes.map((parte, i) =>
         /natural/i.test(parte) ? (
-          <em key={i} className="text-oro-300 italic">
+          <em key={i} className="italic">
             {parte}
           </em>
         ) : (
@@ -88,7 +88,7 @@ function Hero() {
             <span className="eyebrow eyebrow-light">{config.hero.eyebrow}</span>
           </Reveal>
           <Reveal delay={1}>
-            <h1 className="mt-6 font-display text-display font-semibold text-crema-50">
+            <h1 className="mt-6 font-display text-display font-medium text-crema-50">
               <TituloAcentuado titulo={config.hero.titulo} />
             </h1>
           </Reveal>
@@ -112,7 +112,7 @@ function Hero() {
               {chips.map((chip) => (
                 <li
                   key={chip}
-                  className="card-glass px-4 py-2 font-mono text-[11px] font-medium tracking-[0.14em] text-crema-100/90 uppercase"
+                  className="card-glass px-4 py-2 tnum text-[11px] font-medium tracking-[0.14em] text-crema-100/90 uppercase"
                 >
                   {chip}
                 </li>
@@ -126,7 +126,7 @@ function Hero() {
         aria-hidden="true"
         className="absolute bottom-6 left-1/2 hidden -translate-x-1/2 sm:flex flex-col items-center gap-1 text-crema-100/60"
       >
-        <span className="font-mono text-[10px] tracking-[0.3em] uppercase">Descubra</span>
+        <span className="tnum text-[10px] tracking-[0.3em] uppercase">Descubra</span>
         <ChevronDown className="h-5 w-5 animate-bounce" />
       </div>
     </section>
@@ -139,38 +139,38 @@ function Stats() {
       <div className="container-x grid grid-cols-2 gap-4 lg:grid-cols-4">
         <Reveal>
           <div className="card card-hover h-full p-6 text-center sm:p-7">
-            <p className="font-mono text-4xl font-semibold text-verde-700 sm:text-5xl">
+            <p className="tnum text-4xl font-semibold text-verde-950 sm:text-5xl">
               <CountUp end={500} sufix=" L" />
             </p>
-            <p className="ficha mt-2 text-verde-900/60">de leche fresca al día</p>
-            <p className="mt-1 text-xs text-verde-900/50">(480–520 L)</p>
+            <p className="ficha mt-2 text-verde-950/60">de leche fresca al día</p>
+            <p className="mt-1 text-xs text-verde-950/50">(480–520 L)</p>
           </div>
         </Reveal>
         <Reveal delay={1}>
           <div className="card card-hover h-full p-6 text-center sm:p-7">
-            <p className="font-mono text-4xl font-semibold text-verde-700 sm:text-5xl">
+            <p className="tnum text-4xl font-semibold text-verde-950 sm:text-5xl">
               <CountUp end={80} sufix=" kg" />
             </p>
-            <p className="ficha mt-2 text-verde-900/60">de queso elaborado a diario</p>
-            <p className="mt-1 text-xs text-verde-900/50">(75–80 kg)</p>
+            <p className="ficha mt-2 text-verde-950/60">de queso elaborado a diario</p>
+            <p className="mt-1 text-xs text-verde-950/50">(75–80 kg)</p>
           </div>
         </Reveal>
         <Reveal delay={2}>
           <div className="card card-hover h-full p-6 text-center sm:p-7">
-            <p className="font-mono text-4xl font-semibold text-verde-700 sm:text-5xl">
+            <p className="tnum text-4xl font-semibold text-verde-950 sm:text-5xl">
               <CountUp end={7} sufix="/7" />
             </p>
-            <p className="ficha mt-2 text-verde-900/60">días de producción</p>
-            <p className="mt-1 text-xs text-verde-900/50">toda la semana</p>
+            <p className="ficha mt-2 text-verde-950/60">días de producción</p>
+            <p className="mt-1 text-xs text-verde-950/50">toda la semana</p>
           </div>
         </Reveal>
         <Reveal delay={3}>
           <div className="card card-hover h-full p-6 text-center sm:p-7">
-            <p className="font-mono text-4xl font-semibold text-verde-700 sm:text-5xl">
+            <p className="tnum text-4xl font-semibold text-verde-950 sm:text-5xl">
               <CountUp end={100} sufix="%" />
             </p>
-            <p className="ficha mt-2 text-verde-900/60">leche de ganaderos</p>
-            <p className="mt-1 text-xs text-verde-900/50">de la Vereda Jinete</p>
+            <p className="ficha mt-2 text-verde-950/60">leche de ganaderos</p>
+            <p className="mt-1 text-xs text-verde-950/50">de la Vereda Jinete</p>
           </div>
         </Reveal>
       </div>
@@ -187,15 +187,15 @@ function Historia() {
             eyebrow="Nuestra propuesta de valor"
             titulo={
               <>
-                El valor del trabajo, <em className="text-oro-600 italic">transformado</em> en
+                El valor del trabajo, <em className="italic">transformado</em> en
                 queso
               </>
             }
           />
-          <p className="mt-6 text-base leading-relaxed text-verde-900/75">
+          <p className="mt-6 text-base leading-relaxed text-verde-950/70">
             {site.propuesta}
           </p>
-          <p className="mt-4 text-base leading-relaxed text-verde-900/75">
+          <p className="mt-4 text-base leading-relaxed text-verde-950/70">
             {site.marca} nace de {site.empresa} ({site.empresaCompleta}), iniciativa aliada de{" "}
             {site.alianzaSigla}: en lugar de que la leche salga del territorio como materia prima,
             la transformamos aquí mismo y el valor vuelve a las familias ganaderas.
@@ -216,11 +216,11 @@ function Historia() {
             />
           </figure>
           <figure className="card-glass absolute -bottom-4 left-1/2 max-w-[300px] -translate-x-1/2 p-5 text-center lg:-left-10 lg:bottom-8 lg:translate-x-0">
-            <Quote className="mx-auto h-5 w-5 text-oro-300" aria-hidden="true" />
+            <Quote className="mx-auto h-5 w-5 text-crema-200/70" aria-hidden="true" />
             <blockquote className="mt-2 font-display text-sm leading-snug text-crema-50">
               “{site.fraseEstrategica}”
             </blockquote>
-            <figcaption className="mt-2 font-mono text-[10px] tracking-[0.18em] text-crema-200/70 uppercase">
+            <figcaption className="mt-2 tnum text-[10px] tracking-[0.18em] text-crema-200/70 uppercase">
               Equipo {site.empresa}
             </figcaption>
           </figure>
@@ -258,35 +258,35 @@ function ProductosHome() {
                   />
                   <div className="absolute inset-0 bg-linear-to-t from-verde-950/35 to-transparent" />
                   {p.descuento_activo && p.precio_descuento && (
-                    <span className="absolute top-4 left-4 inline-flex items-center gap-1.5 rounded-full bg-oro-400 px-3 py-1 font-mono text-[11px] font-bold tracking-wide text-verde-950 uppercase">
+                    <span className="absolute top-4 left-4 inline-flex items-center gap-1.5 rounded-full bg-verde-950 px-3 py-1 tnum text-[11px] font-bold tracking-wide text-crema-50 uppercase">
                       <Wheat className="h-3.5 w-3.5" aria-hidden="true" />
                       En descuento
                     </span>
                   )}
-                  <figcaption className="absolute right-4 bottom-4 card-glass px-3.5 py-1.5 font-mono text-xs font-semibold text-crema-50">
+                  <figcaption className="absolute right-4 bottom-4 card-glass px-3.5 py-1.5 tnum text-xs font-semibold text-crema-50">
                     {p.unidad === "kg" ? `${p.precio_min >= 0 ? "" : ""}$/kg` : "$/botella"}
                   </figcaption>
                 </figure>
                 <div className="p-7">
-                  <p className="ficha text-verde-600">{p.apodo}</p>
+                  <p className="ficha text-verde-950/60">{p.apodo}</p>
                   <h3 className="mt-1.5 font-display text-2xl font-semibold text-verde-950">
                     {p.nombre}
                   </h3>
-                  <p className="mt-3 text-[0.95rem] leading-relaxed text-verde-900/70">
+                  <p className="mt-3 text-[0.95rem] leading-relaxed text-verde-950/70">
                     {p.descripcion}
                   </p>
                   <p className="mt-5 flex flex-wrap items-baseline gap-x-3">
                     {p.descuento_activo && p.precio_descuento ? (
                       <>
-                        <span className="font-mono text-xl font-semibold text-oro-600">
+                        <span className="tnum text-xl font-semibold text-verde-950/60">
                           {precioUnidad(p)}
                         </span>
-                        <s className="font-mono text-sm text-verde-900/40">
+                        <s className="tnum text-sm text-verde-950/45">
                           {precioUnidad({ ...p, descuento_activo: false })}
                         </s>
                       </>
                     ) : (
-                      <span className="font-mono text-xl font-semibold text-verde-700">
+                      <span className="tnum text-xl font-semibold text-verde-950">
                         {precioUnidad(p)}
                       </span>
                     )}
@@ -327,17 +327,17 @@ function ProcesoHome() {
             return (
               <Reveal key={paso.titulo}>
                 <li className="grid grid-cols-[auto_1fr] items-start gap-5 py-7 sm:grid-cols-[auto_1fr_220px] sm:gap-8">
-                  <span className="font-display text-5xl leading-none font-semibold text-oro-400/50 sm:text-6xl">
+                  <span className="font-display text-5xl leading-none font-semibold text-verde-950/30/50 sm:text-6xl">
                     {String(i + 1).padStart(2, "0")}
                   </span>
                   <div>
                     <div className="flex items-center gap-2.5">
-                      <Icono className="h-5 w-5 text-verde-600" aria-hidden="true" />
+                      <Icono className="h-5 w-5 text-verde-950/60" aria-hidden="true" />
                       <h3 className="font-display text-xl font-semibold text-verde-950 sm:text-2xl">
                         {paso.titulo}
                       </h3>
                     </div>
-                    <p className="mt-2 max-w-prose text-sm leading-relaxed text-verde-900/70 sm:text-[0.95rem]">
+                    <p className="mt-2 max-w-prose text-sm leading-relaxed text-verde-950/70 sm:text-[0.95rem]">
                       {paso.texto}
                     </p>
                   </div>
@@ -356,7 +356,7 @@ function ProcesoHome() {
         </ol>
         <Reveal>
           <p className="mt-8 text-center">
-            <Link to="/proceso" className="link-underline font-semibold text-verde-800">
+            <Link to="/proceso" className="link-underline font-semibold text-verde-950">
               Conozca el proceso completo
             </Link>
           </p>
@@ -406,9 +406,9 @@ function Impacto() {
               },
             ].map(({ Icono, titulo, texto }) => (
               <div key={titulo} className="card-glass p-6 transition-transform duration-300 hover:-translate-y-1">
-                <Icono className="h-6 w-6 text-oro-300" aria-hidden="true" />
+                <Icono className="h-6 w-6 text-crema-200/70" aria-hidden="true" />
                 <h3 className="mt-3 font-semibold text-crema-50">{titulo}</h3>
-                <p className="mt-1.5 text-sm leading-relaxed text-crema-200/75">{texto}</p>
+                <p className="mt-1.5 text-sm leading-relaxed text-crema-200/80">{texto}</p>
               </div>
             ))}
           </div>
@@ -427,22 +427,22 @@ function Pedido() {
             eyebrow="Pedidos"
             titulo={
               <>
-                Arme su pedido en <em className="text-oro-600 italic">un minuto</em>
+                Arme su pedido en <em className="italic">un minuto</em>
               </>
             }
             bajada="Elija las cantidades, vea el valor estimado y envíe el pedido por WhatsApp. Confirmamos precio y entrega en el mismo chat."
           />
-          <ul className="mt-7 grid gap-3.5 text-sm text-verde-900/75">
+          <ul className="mt-7 grid gap-3.5 text-sm text-verde-950/70">
             <li className="flex items-center gap-3">
-              <Clock className="h-4 w-4 flex-none text-oro-600" aria-hidden="true" />
+              <Clock className="h-4 w-4 flex-none text-verde-950/60" aria-hidden="true" />
               Atendemos 7 días a la semana
             </li>
             <li className="flex items-center gap-3">
-              <MapPin className="h-4 w-4 flex-none text-oro-600" aria-hidden="true" />
+              <MapPin className="h-4 w-4 flex-none text-verde-950/60" aria-hidden="true" />
               Entregas diarias en la región
             </li>
             <li className="flex items-center gap-3">
-              <BadgeCheck className="h-4 w-4 flex-none text-oro-600" aria-hidden="true" />
+              <BadgeCheck className="h-4 w-4 flex-none text-verde-950/60" aria-hidden="true" />
               Precio especial para tiendas
             </li>
           </ul>
@@ -477,7 +477,7 @@ function RecetasHome() {
                     loading="lazy"
                     className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
                   />
-                  <figcaption className="absolute right-3 bottom-3 card-glass px-3 py-1 font-mono text-[11px] font-medium text-crema-50">
+                  <figcaption className="absolute right-3 bottom-3 card-glass px-3 py-1 tnum text-[11px] font-medium text-crema-50">
                     {r.ocasion} · {r.tiempo}
                   </figcaption>
                 </figure>
@@ -485,7 +485,7 @@ function RecetasHome() {
                   <h3 className="font-display text-xl leading-snug font-semibold text-verde-950">
                     {r.nombre}
                   </h3>
-                  <p className="mt-2 text-sm leading-relaxed text-verde-900/70">
+                  <p className="mt-2 text-sm leading-relaxed text-verde-950/70">
                     {r.ingredientes[0]} y más: receta completa en la sección.
                   </p>
                 </div>
@@ -516,7 +516,7 @@ function FaqHome() {
         <Reveal delay={1}>
           <Faq limite={4} />
           <p className="mt-6 text-sm">
-            <Link to="/contacto" className="link-underline font-semibold text-verde-800">
+            <Link to="/contacto" className="link-underline font-semibold text-verde-950">
               Ver todas las preguntas
             </Link>
           </p>
@@ -540,15 +540,15 @@ function CtaFinal() {
         <div className="absolute inset-0 bg-verde-950/78" />
         <div
           aria-hidden="true"
-          className="glow-anim pointer-events-none absolute top-1/2 left-1/2 h-80 w-80 -translate-x-1/2 -translate-y-1/2 rounded-full bg-oro-400/25 blur-[100px]"
+          className="glow-anim pointer-events-none absolute top-1/2 left-1/2 h-80 w-80 -translate-x-1/2 -translate-y-1/2 rounded-full bg-verde-950/10 blur-[100px]"
         />
       </div>
       <div className="container-x relative text-center">
         <Reveal>
           <h2 className="mx-auto max-w-2xl font-display text-3xl leading-tight font-semibold text-crema-50 sm:text-5xl">
-            ¿Ya le dio antojo de un <em className="text-oro-300 italic">buen queso</em> costeño?
+            ¿Ya le dio antojo de un <em className="italic">buen queso</em> costeño?
           </h2>
-          <p className="mx-auto mt-5 max-w-xl text-lead text-crema-200/85">
+          <p className="mx-auto mt-5 max-w-xl text-lead text-crema-200/80">
             Pida el suyo hoy: queso fresco del amanecer, entregado el mismo día.
           </p>
           <div className="mt-9 flex flex-wrap justify-center gap-3">

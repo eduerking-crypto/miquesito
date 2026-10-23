@@ -3,7 +3,6 @@
 @theme {
   --font-display: "Fraunces", Georgia, "Times New Roman", serif;
   --font-sans: "Karla", ui-sans-serif, system-ui, sans-serif;
-  --font-mono: "JetBrains Mono", ui-monospace, "Courier New", monospace;
 
   /* Verde sabana */
   --color-verde-50: #eff6ea;
@@ -25,7 +24,7 @@
   --color-crema-300: #e9dab8;
   --color-crema-400: #dcc08e;
 
-  /* Oro cosecha */
+  /* Oro cosecha (solo UI: botones, banners, acentos de fondo) */
   --color-oro-200: #f2dcab;
   --color-oro-300: #e9c46a;
   --color-oro-400: #dcb052;
@@ -33,28 +32,25 @@
   --color-oro-600: #a16207;
   --color-oro-700: #854e0b;
 
-  /* Tierra */
-  --color-tierra-500: #a8683a;
-  --color-tierra-600: #8a4f2c;
-
   /* WhatsApp */
   --color-wa-600: #12924a;
   --color-wa-700: #0d7a3d;
 
-  /* Escala tipográfica con tracking negativo progresivo */
+  /* Escala tipografica (Taste: pocos tamanos, bien separados) */
   --text-display: clamp(2.9rem, 7.5vw, 5rem);
   --text-display--line-height: 1.02;
   --text-display--letter-spacing: -0.03em;
   --text-h2: clamp(2rem, 4.2vw, 2.9rem);
   --text-h2--line-height: 1.08;
   --text-h2--letter-spacing: -0.022em;
-  --text-lead: clamp(1.075rem, 1.9vw, 1.3rem);
+  --text-lead: clamp(1.125rem, 1rem + 0.4vw, 1.375rem);
   --text-lead--line-height: 1.65;
 }
 
 /* ————— Base ————— */
 
 html {
+  font-size: 106.25%; /* letras un poco mas grandes en todo el sitio (16 -> 17px) */
   scroll-behavior: smooth;
 }
 
@@ -66,14 +62,27 @@ body {
   overflow-x: hidden;
 }
 
-/* Grain de papel artesanal sobre todo el sitio */
+/* Texto justificado con guiones (parrafos de lectura) */
+main p,
+footer p {
+  text-align: justify;
+  hyphens: auto;
+  -webkit-hyphens: auto;
+  max-width: 70ch;
+}
+
+.sin-justificar p {
+  text-align: left;
+}
+
+/* Grain de papel artesanal sutil */
 body::before {
   content: "";
   position: fixed;
   inset: 0;
   z-index: 60;
   pointer-events: none;
-  opacity: 0.045;
+  opacity: 0.04;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
 }
 
@@ -81,6 +90,11 @@ h1, h2, h3 {
   font-family: var(--font-display);
   font-optical-sizing: auto;
   text-wrap: balance;
+}
+
+/* El display no necesita peso: tamano y espacio dan la confianza (Taste) */
+main h1 {
+  font-weight: 500;
 }
 
 ::selection {
@@ -94,22 +108,31 @@ h1, h2, h3 {
   border-radius: 4px;
 }
 
-/* ————— Fondos premium ————— */
+/* ————— Contenedor unico: cuadrado con los bordes de la pagina ————— */
+
+.container-x {
+  margin-inline: auto;
+  width: 100%;
+  max-width: 87.5rem; /* 1400px: el contenido llega a los bordes */
+  padding-inline: clamp(1.5rem, 4.5vw, 4rem);
+}
+
+/* ————— Fondos ————— */
 
 .bg-mesh-claro {
   background-color: var(--color-crema-50);
   background-image:
-    radial-gradient(ellipse 80% 60% at 15% 10%, rgba(187, 223, 166, 0.35), transparent 60%),
-    radial-gradient(ellipse 70% 55% at 85% 15%, rgba(220, 176, 82, 0.18), transparent 55%),
-    radial-gradient(ellipse 90% 70% at 50% 100%, rgba(93, 163, 75, 0.12), transparent 65%);
+    radial-gradient(ellipse 80% 60% at 15% 10%, rgba(187, 223, 166, 0.28), transparent 60%),
+    radial-gradient(ellipse 70% 55% at 85% 15%, rgba(220, 176, 82, 0.12), transparent 55%),
+    radial-gradient(ellipse 90% 70% at 50% 100%, rgba(93, 163, 75, 0.09), transparent 65%);
 }
 
 .bg-mesh-oscuro {
   background-color: var(--color-verde-950);
   background-image:
-    radial-gradient(ellipse 75% 60% at 12% 0%, rgba(47, 120, 38, 0.35), transparent 60%),
-    radial-gradient(ellipse 65% 55% at 88% 20%, rgba(220, 176, 82, 0.14), transparent 55%),
-    radial-gradient(ellipse 90% 70% at 50% 105%, rgba(31, 97, 32, 0.5), transparent 65%);
+    radial-gradient(ellipse 75% 60% at 12% 0%, rgba(47, 120, 38, 0.3), transparent 60%),
+    radial-gradient(ellipse 65% 55% at 88% 20%, rgba(220, 176, 82, 0.1), transparent 55%),
+    radial-gradient(ellipse 90% 70% at 50% 105%, rgba(31, 97, 32, 0.42), transparent 65%);
 }
 
 /* ————— Componentes ————— */
@@ -142,7 +165,7 @@ h1, h2, h3 {
 .btn-primary:hover {
   box-shadow:
     inset 0px 1px 0px 0px rgba(255, 255, 255, 0.25),
-    0 12px 32px -10px rgba(18, 59, 23, 0.55);
+    0 10px 26px -12px rgba(18, 59, 23, 0.5);
   transform: translateY(-1px);
 }
 
@@ -155,7 +178,7 @@ h1, h2, h3 {
 .btn-oro:hover {
   box-shadow:
     inset 0px 1px 0px 0px rgba(255, 255, 255, 0.4),
-    0 14px 36px -10px rgba(220, 176, 82, 0.6);
+    0 12px 30px -12px rgba(220, 176, 82, 0.55);
   transform: translateY(-1px);
 }
 
@@ -166,7 +189,7 @@ h1, h2, h3 {
 
 .btn-wa:hover {
   background-color: var(--color-wa-700);
-  box-shadow: 0 12px 32px -10px rgba(18, 144, 74, 0.55);
+  box-shadow: 0 10px 26px -12px rgba(18, 144, 74, 0.5);
   transform: translateY(-1px);
 }
 
@@ -198,7 +221,6 @@ h1, h2, h3 {
   font-size: 0.85rem;
 }
 
-/* Flecha que avanza en hover (dentro de .btn) */
 .btn .flecha {
   transition: transform 0.25s cubic-bezier(0.33, 1, 0.68, 1);
 }
@@ -207,7 +229,6 @@ h1, h2, h3 {
   transform: translateX(4px);
 }
 
-/* Tarjeta glass con borde hairline degradado */
 .card {
   position: relative;
   border-radius: 1.5rem;
@@ -219,7 +240,7 @@ h1, h2, h3 {
 
 .card-hover:hover {
   transform: translateY(-5px);
-  box-shadow: 0 22px 48px -20px rgba(24, 42, 29, 0.28);
+  box-shadow: 0 18px 40px -22px rgba(24, 42, 29, 0.25);
 }
 
 .card-glass {
@@ -230,17 +251,17 @@ h1, h2, h3 {
   -webkit-backdrop-filter: blur(14px);
 }
 
-/* Eyebrow con líneas a los lados */
+/* Un solo estilo de texto: la jerarquia la dan tamano y peso, no el color (Impeccable) */
 .eyebrow {
   display: inline-flex;
   align-items: center;
   gap: 0.7rem;
-  font-family: var(--font-mono);
-  font-size: 0.72rem;
-  font-weight: 600;
+  font-family: var(--font-sans);
+  font-size: 0.78rem;
+  font-weight: 700;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: var(--color-oro-600);
+  color: rgba(18, 59, 23, 0.58);
 }
 
 .eyebrow::before,
@@ -248,11 +269,11 @@ h1, h2, h3 {
   content: "";
   height: 1px;
   width: 2rem;
-  background-image: linear-gradient(to right, transparent, var(--color-oro-500));
+  background-color: rgba(18, 59, 23, 0.28);
 }
 
 .eyebrow::after {
-  background-image: linear-gradient(to left, transparent, var(--color-oro-500));
+  background-color: rgba(18, 59, 23, 0.28);
 }
 
 .eyebrow-left::before {
@@ -264,28 +285,35 @@ h1, h2, h3 {
 }
 
 .eyebrow-light {
-  color: var(--color-oro-300);
+  color: rgba(250, 244, 230, 0.55);
+}
+
+.eyebrow-light::before,
+.eyebrow-light::after {
+  background-color: rgba(250, 244, 230, 0.3);
 }
 
 .ficha {
-  font-family: var(--font-mono);
-  font-size: 0.78rem;
+  font-size: 0.85rem;
   line-height: 1.7;
+}
+
+.tnum {
+  font-variant-numeric: tabular-nums;
 }
 
 .link-underline {
   text-decoration: underline;
-  text-decoration-color: var(--color-oro-400);
-  text-underline-offset: 3px;
-  text-decoration-thickness: 1.5px;
+  text-decoration-color: rgba(18, 59, 23, 0.4);
+  text-underline-offset: 0.18em;
+  text-decoration-thickness: 0.07em;
   transition: text-decoration-color 0.2s ease;
 }
 
 .link-underline:hover {
-  text-decoration-color: var(--color-oro-600);
+  text-decoration-color: rgba(18, 59, 23, 0.75);
 }
 
-/* Link de nav con subrayado animado */
 .nav-link {
   position: relative;
   transition: color 0.2s ease;
@@ -360,7 +388,7 @@ h1, h2, h3 {
   transform: none;
 }
 
-/* ————— Parallax hero (scroll-driven, con fallback) ————— */
+/* ————— Parallax hero ————— */
 
 @supports (animation-timeline: scroll()) {
   @keyframes drift-up {
@@ -374,11 +402,11 @@ h1, h2, h3 {
   }
 }
 
-/* ————— Glow animado ————— */
+/* ————— Glow (mas silencioso) ————— */
 
 @keyframes glow-drift {
-  from { transform: translateX(-120px); opacity: 0.5; }
-  to { transform: translateX(120px); opacity: 0.9; }
+  from { transform: translateX(-120px); opacity: 0.35; }
+  to { transform: translateX(120px); opacity: 0.6; }
 }
 
 .glow-anim {
@@ -396,7 +424,7 @@ details.faq-item {
 }
 
 details.faq-item[open] {
-  box-shadow: 0 14px 34px -18px rgba(24, 42, 29, 0.25);
+  box-shadow: 0 12px 30px -20px rgba(24, 42, 29, 0.22);
 }
 
 details.faq-item summary {
@@ -418,7 +446,7 @@ details.faq-item summary::-webkit-details-marker {
 details.faq-item summary .faq-icon {
   flex: none;
   transition: transform 0.25s ease;
-  color: var(--color-oro-600);
+  color: rgba(18, 59, 23, 0.55);
 }
 
 details.faq-item[open] summary .faq-icon {
@@ -427,8 +455,7 @@ details.faq-item[open] summary .faq-icon {
 
 details.faq-item .faq-body {
   padding: 0 1.35rem 1.15rem;
-  color: var(--color-verde-900);
-  opacity: 0.85;
+  color: rgba(18, 59, 23, 0.8);
   max-width: 62ch;
 }
 
@@ -462,7 +489,7 @@ input[type="number"]::-webkit-outer-spin-button {
   box-shadow: 0 0 0 3px rgba(74, 147, 56, 0.15);
 }
 
-/* ————— Reduced motion global ————— */
+/* ————— Reduced motion ————— */
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }

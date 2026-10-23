@@ -55,13 +55,13 @@ export function Tiendas() {
               return (
                 <Reveal key={b.titulo} delay={((i % 3) + 1) as 1 | 2 | 3}>
                   <li className="card card-hover h-full p-7">
-                    <span className="flex h-11 w-11 items-center justify-center rounded-2xl bg-verde-100 text-verde-800">
+                    <span className="flex h-11 w-11 items-center justify-center rounded-2xl bg-verde-100 text-verde-950">
                       <Icono className="h-5 w-5" aria-hidden="true" />
                     </span>
                     <h3 className="mt-4 font-display text-lg font-semibold text-verde-950">
                       {b.titulo}
                     </h3>
-                    <p className="mt-2 text-sm leading-relaxed text-verde-900/70">{b.texto}</p>
+                    <p className="mt-2 text-sm leading-relaxed text-verde-950/70">{b.texto}</p>
                   </li>
                 </Reveal>
               );
@@ -83,14 +83,14 @@ export function Tiendas() {
               {tiendas.pasos.map((paso, i) => (
                 <Reveal key={paso.titulo} delay={(i + 1) as 1 | 2 | 3}>
                   <li className="flex gap-6">
-                    <span className="font-display text-5xl leading-none font-semibold text-oro-400/60">
+                    <span className="font-display text-5xl leading-none font-semibold text-verde-950/30/60">
                       {String(i + 1).padStart(2, "0")}
                     </span>
                     <div>
                       <h3 className="font-display text-xl font-semibold text-verde-950">
                         {paso.titulo}
                       </h3>
-                      <p className="mt-1.5 text-sm leading-relaxed text-verde-900/70">
+                      <p className="mt-1.5 text-sm leading-relaxed text-verde-950/70">
                         {paso.texto}
                       </p>
                     </div>
@@ -104,7 +104,7 @@ export function Tiendas() {
             <div className="card overflow-hidden">
               <div className="bg-mesh-oscuro flex items-center justify-between px-7 py-5">
                 <span className="eyebrow eyebrow-left eyebrow-light">Ficha comercial</span>
-                <Store className="h-5 w-5 text-oro-300" aria-hidden="true" />
+                <Store className="h-5 w-5 text-crema-200/70" aria-hidden="true" />
               </div>
               <div className="px-7 py-7">
                 <dl className="ficha grid gap-2.5">
@@ -118,8 +118,8 @@ export function Tiendas() {
                     ["Complementario", "Suero de leche $5.000 / botella 1 L"],
                   ].map(([clave, valor]) => (
                     <div key={clave} className="flex flex-wrap gap-x-3">
-                      <dt className="min-w-[8.5rem] text-verde-600">{clave}</dt>
-                      <dd className="text-verde-900">{valor}</dd>
+                      <dt className="min-w-[8.5rem] text-verde-950/60">{clave}</dt>
+                      <dd className="text-verde-950">{valor}</dd>
                     </div>
                   ))}
                 </dl>
@@ -132,7 +132,7 @@ export function Tiendas() {
                   <ClipboardList className="h-4 w-4" aria-hidden="true" />
                   Solicitar ficha comercial
                 </a>
-                <p className="mt-3 text-center text-xs text-verde-900/60">
+                <p className="mt-3 text-center text-xs text-verde-950/60">
                   Respondemos el mismo día con precios y condiciones para su negocio.
                 </p>
               </div>

@@ -44,7 +44,7 @@ export function Proceso() {
               eyebrow="Del campo a su mesa"
               titulo={
                 <>
-                  Un día completo de <em className="text-oro-300 italic">trabajo honesto</em>
+                  Un día completo de <em className="italic">trabajo honesto</em>
                 </>
               }
               bajada="Así viaja la leche de la Vereda Jinete hasta su mesa: el mismo día, sin atajos."
@@ -60,13 +60,13 @@ export function Proceso() {
               <Reveal key={paso.titulo}>
                 <li className="grid items-center gap-6 sm:grid-cols-[1fr_280px] sm:gap-10">
                   <div className="order-2 sm:order-1">
-                    <span className="font-display text-6xl leading-none font-semibold text-oro-400/50">
+                    <span className="font-display text-6xl leading-none font-semibold text-verde-950/30/50">
                       {String(i + 1).padStart(2, "0")}
                     </span>
                     <h2 className="mt-3 font-display text-2xl font-semibold text-verde-950 sm:text-3xl">
                       {paso.titulo}
                     </h2>
-                    <p className="mt-3 max-w-prose text-[0.98rem] leading-relaxed text-verde-900/75">
+                    <p className="mt-3 max-w-prose text-[0.98rem] leading-relaxed text-verde-950/70">
                       {paso.texto}
                     </p>
                   </div>
@@ -116,11 +116,11 @@ export function Proceso() {
           </Reveal>
           <Reveal delay={1}>
             <figure className="card-glass p-9">
-              <Quote className="h-7 w-7 text-oro-300" aria-hidden="true" />
+              <Quote className="h-7 w-7 text-crema-200/70" aria-hidden="true" />
               <blockquote className="mt-4 font-display text-2xl leading-snug text-crema-50">
                 “{config.eslogan || site.eslogan}”
               </blockquote>
-              <figcaption className="mt-4 font-mono text-xs tracking-[0.18em] text-crema-200/70 uppercase">
+              <figcaption className="mt-4 tnum text-xs tracking-[0.18em] text-crema-200/70 uppercase">
                 {site.marca} · {site.origen}
               </figcaption>
             </figure>
